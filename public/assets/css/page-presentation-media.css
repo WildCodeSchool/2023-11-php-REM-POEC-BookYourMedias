@@ -1,0 +1,92 @@
+.info-labels-for-title, 
+.info-labels-for-author,
+.info-labels-for-date,
+.info-labels-for-description,
+.data-of-media-title,
+.data-of-media-author,
+.data-of-media-date,
+.data-of-media-description {
+    --main-size-data: 1.4em;
+}
+  
+
+#presentation-media {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 30%;
+}
+
+.left-side-page {
+    grid-area: 1 / 1 / 6 / 3;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.right-side-page {
+    grid-area: 1 / 3 / 6 / 6;
+    background-color: #fff;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) repeat(2, 0);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.info-labels-for-title { grid-area: 1 / 1 / 2 / 2; }
+.info-labels-for-author { grid-area: 2 / 1 / 3 / 2; }
+.info-labels-for-date { grid-area: 3 / 1 / 4 / 2; }
+.info-labels-for-description { grid-area: 4 / 1 / 5 / 2; }
+
+.data-of-media-title { grid-area: 1 / 2 / 2 / 4; }
+.data-of-media-author { grid-area: 2 / 2 / 3 / 4; }
+.data-of-media-date { grid-area: 3 / 2 / 4 / 4; }
+.data-of-media-description { grid-area: 4 / 2 / 5 / 4; }
+
+
+.info-labels-for-title p,
+.info-labels-for-author p,
+.info-labels-for-date p,
+.info-labels-for-description p,
+.data-of-media-title p,
+.data-of-media-author p,
+.data-of-media-date p,
+.data-of-media-description p {
+    font-size: var(--main-size-data);
+}
+
+.info-labels-for-title p,
+.info-labels-for-author p,
+.info-labels-for-date p,
+.info-labels-for-description p{
+    text-decoration: underline;
+}
+
+.box {
+    height: 70px;
+}
+
+.cover-picture {
+    height: 30vw;
+    border-radius: 1em;
+}
+
+.style-button {
+    background-color: #0A477D;
+    border-radius: 1rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 3em;
+    width: 40%;
+}
+
+.size-available, .size-categorie {
+    font-size: 1.5em;
+}
