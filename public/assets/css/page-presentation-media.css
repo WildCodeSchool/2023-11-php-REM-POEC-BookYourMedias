@@ -34,7 +34,7 @@
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr) repeat(2, 0);
-    grid-template-rows: repeat(4, 1fr);
+    grid-auto-rows: 6rem;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
@@ -66,15 +66,16 @@
 .info-labels-for-date p,
 .info-labels-for-description p{
     text-decoration: underline;
+    color: #0A477D;
 }
 
 .box {
-    height: 70px;
+    width: 85%;
 }
 
 .cover-picture {
-    height: 30vw;
-    border-radius: 1em;
+    border-radius: 0.5em;
+    width : clamp(14em, 5em, 18em);
 }
 
 .style-button {
