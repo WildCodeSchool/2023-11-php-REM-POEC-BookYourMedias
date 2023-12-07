@@ -6,7 +6,7 @@
 .data-of-media-author,
 .data-of-media-date,
 .data-of-media-description {
-    --main-size-data: 1.4em;
+    --main-size-data: 1.6em;
 }
   
 
@@ -16,13 +16,12 @@
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 30%;
+    font-family: "roboto";
 }
 
 .left-side-page {
     grid-area: 1 / 1 / 6 / 3;
-    background-color: #fff;
     display: flex;
-    justify-content: space-evenly;
     flex-direction: column;
     align-items: center;
 }
@@ -75,7 +74,7 @@
 
 .cover-picture {
     border-radius: 0.5em;
-    width : clamp(14em, 5em, 18em);
+    width : clamp(13em, 35vw, 21em);
 }
 
 .style-button {
@@ -85,7 +84,8 @@
     cursor: pointer;
     font-size: 1.5rem;
     height: 3em;
-    width: 40%;
+    width: 50%;
+    font-family: "roboto";
 }
 
 .size-available, .size-categorie {

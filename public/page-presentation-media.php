@@ -28,7 +28,7 @@
             <div class="data-of-media-title box"><p>Homo deus</p></div>
             <div class="data-of-media-author box"><p>Yuval Noah Harari</p></div>
             <div class="data-of-media-date box"><p>2015</p></div>
-            <div class="data-of-media-description box"><p>Homo Deus : Une brève histoire de l'avenir a été publié pour la première fois en hébreu en 2015. Traduit en plusieurs langues, il est publié en traduction anglaise en 2016 et en française aux éditions Albin Michel en septembre 2017</p></div>
+            <div class="data-of-media-description box"><p>Homo Deus : Une brève histoire de l'avenir a été publié pour la première fois en hébreu en 2015. Traduit en plusieurs langues, il est publié en traduction anglaise en 2016 et en française aux éditions Albin Michel en septembre 2017.</p></div>
         </div>
     </section>
 </body>
