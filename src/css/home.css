@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* font */
+@font-face {
+    font-family: "roboto";
+    src: url("../font/Roboto-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+*:focus {
+    outline: none;
+}
+
+.logoImg {
+    height: 4rem;
+    margin-top: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.profileIcone {
+    width: 3rem;
+    height: 3rem;
+}
+
+.header {
+    height: 30%;
+    margin-bottom: 2rem;
+}
+.headerImg {
+    height: 100%;
+    width: 100%;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 6rem;
+}
+
+.searchInput {
+    height: 3rem;
+    padding-left: 2rem;
+    width: 14rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #0a477d;
+}
+
+.searchInput::placeholder {
+    font-style: italic;
+}
+
+.searchBtn {
+    height: 3rem;
+    border: none;
+    margin-right: 2rem;
+    background-color: #0a477d;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+.searchIcon {
+    height: 2rem;
+}
+
+.booksGrid {
+    display: flex;
+    justify-content: space-around;
+}
+
+.book {
+    height: 24rem;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book:hover {
+    transform: scale(1.1);
+}
+
+.bookCover {
+    height: 100%;
+}
+.bookTitle {
+    font-size: large;
+    font-family: "roboto";
+    color: #0a477d;
+}
+
+.bookAuthor {
+    font-family: "roboto";
+    color: #0a477d;
+    font-size: medium;
+}
+
+.plusBtn {
+    border: none;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.booksContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: #0a477d;
+    width: 100%;
+    height: 4rem;
+    margin-top: 2rem;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+footer > span {
+    color: white;
+    font-family: "roboto";
+}
+
+.socialMedias {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .booksGrid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .book {
+        width: 50%;
+        height: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 6rem;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .booksGrid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .book {
+        width: 100%;
+        height: 18rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 6rem;
+    }
+
+    .socialMedias {
+        display: flex;
+        
+    }
+    .media {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    footer > span {
+        font-size: x-small;
+    }
+}
