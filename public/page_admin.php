@@ -7,13 +7,13 @@ require 'livre.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
     <title>Page admin</title>
 </head>
 
 <body>
     <header>
-        <img class="logo" src="logo-book-your-medias.png" alt="logo">
+        <img class="logo" src="./assets/images/logo-book-your-medias.png" alt="logo">
     </header>
 
     <h1>
@@ -40,7 +40,7 @@ require 'livre.php';
             <th>' . $livre["id"] . '</th>
             <th>' . $livre["titre"] . '</th>
             <th>' . $livre["auteur"] . '</th>
-            <th>' . $livre["actions"] . '<img class="corbeil" src="img.png" alt="corbeil"></th>
+            <th>' . $livre["actions"] . '<img class="corbeil" src="assets/images/img.png" alt="corbeil"></th>
             <th>' . $livre["Disponibilité"] . '</th>
             </tr>';
         }

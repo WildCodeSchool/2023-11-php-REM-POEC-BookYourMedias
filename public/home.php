@@ -4,25 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
 
     <title>Document</title>
 </head>
 
 <body>
     <nav>
-        <img src="../images/logo.png" alt="logo image" class="logoImg">
-        <img src="../images/profile.png" alt="profile icone" class="profileIcone">
+        <img src="./assets/images/logo.png" alt="logo image" class="logoImg">
+        <img src="./assets/images/profile.png" alt="profile icone" class="profileIcone">
     </nav>
     <header class="header">
-        <img src="../images/header.png" alt="header image" class="headerImg">
+        <img src="./assets/images/header.png" alt="header image" class="headerImg">
     </header>
 
     <div class="container">
         <div class="searchBar">
             <input type="text" placeholder="Search for a media..." class="searchInput" />
             <button class="searchBtn">
-                <img src="../images/search.png" alt="search button" class="searchIcon" />
+                <img src="./assets/images/search.png" alt="search button" class="searchIcon" />
             </button>
         </div>
         <div class="booksContainer">
@@ -45,16 +45,13 @@
                 }
                 ?>
             </div>
-            <button class="plusBtn">
-                <img src="../images/plus.png" alt="plus button" class="plusImg">
-            </button>
         </div>
         <footer>
             <span>© 2023 Book Your Medias. All rights reserved</span>
             <div class="socialMedias">
-                <img src="../images/instagram.png" alt="instagram" class="media">
-                <img src="../images/twitter.png" alt="twitter" class="media">
-                <img src="../images/facebook.png" alt="facebook" class="media">
+                <img src="./assets/images/instagram.png" alt="instagram" class="media">
+                <img src="./assets/images/twitter.png" alt="twitter" class="media">
+                <img src="./assets/images/facebook.png" alt="facebook" class="media">
             </div>
         </footer>
 </body>

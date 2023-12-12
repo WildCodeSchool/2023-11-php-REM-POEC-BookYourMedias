@@ -10,7 +10,7 @@
 
 <body>
     <nav>
-        <a href="#"><img src="./assets/images/page-presentation-media/logo-book-your-medias.png" alt="logo du site" width="150px"></a>
+        <a href="#"><img src="./assets/images/logo-book-your-medias.png" alt="logo du site" width="150px"></a>
     </nav>
     <section id="inscription-connexion-user">
         <fieldset class="container-form-connexion">

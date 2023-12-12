@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav>
-        <img src="./assets/images/page-presentation-media/logo-book-your-medias.png" alt="logo du site" width="150px">
+        <img src="./assets/images/logo-book-your-medias.png" alt="logo du site" width="150px">
     </nav>
     <section id="presentation-media">
         <div class="left-side-page">
