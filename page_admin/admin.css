@@ -1,53 +1,60 @@
-h1{
+button {
     text-decoration: underline;
     font-size: 1.2rem;
 }
 
 table {
-    display:grid;
+    display: grid;
     border: 1px solid black;
     border-collapse: collapse;
-    /* background-color: rgb(175, 171, 162); */
-    margin-left:40px;
-   
+    font-size: clamp(11px, 2.5vw, 17px);
+    margin-left: 40px;
+
     border: none;
     padding-top: 20px;
 
-    
+
 }
-td,th{
+
+td,
+th {
     border: 1px solid black;
     padding: 8px;
-    background-color: rgb(175, 171, 162);
+    
     padding-right: 40px;
-    
-    
+
+
 }
-.notif button{
-    /* background-color: green; */
-    background-color: rgb(175, 171, 162);
-    text-decoration: underline;
-    
-}
-.corbeil{
+
+.corbeil {
     width: 30px;
     padding-left: 50px;
 }
-.logo{
-    width:100px;
+
+.logo {
+    width: 100px;
 }
-button{
+
+button {
     /* background-color: green; */
-    border-radius:3px 5px;
+    border-radius: 3px 5px;
     border: none;
-    
+
 }
-.notifier{
-    /* background-color: rgb(149, 166, 193) ; */
-    color: black;
-    background-color: rgb(175, 171, 162);
-    
-}
-.dispo{
-    color: rgb(88, 88, 77);
+
+@media screen and (max-width:1020px)  {
+    table {
+        margin-left: 0px
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .corbeil {
+        display: flex;
+        padding-top: 10px;
+        padding-right: 40px;
+        justify-content: left;
+    }
 }

@@ -16,25 +16,33 @@ require 'livre.php';
         <img class="logo" src="logo-book-your-medias.png" alt="logo">
     </header>
 
-    <h1>Ajouter un média</h1>
+    <h1>
+        <button action="" type="submit">Ajouter un média</button>
+    </h1>
 
     <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Actions</th>
+            <th>Disponibilité</th>
+        </tr>
+
         <?php
 
 
         foreach ($livres as $livre) {
-        
-            echo '<tr>
+
+            echo 
+            '<tr>
             
             <th>' . $livre["id"] . '</th>
             <th>' . $livre["titre"] . '</th>
             <th>' . $livre["auteur"] . '</th>
             <th>' . $livre["actions"] . '<img class="corbeil" src="img.png" alt="corbeil"></th>
-            
             <th>' . $livre["Disponibilité"] . '</th>
-            
-            
-        </tr>';
+            </tr>';
         }
 
         ?>
