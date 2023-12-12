@@ -113,7 +113,6 @@ footer {
     .right-side-page{
         margin-top: 3em;
         margin-left: 3em;
-        /* margin-right: 3em; */
     }
     footer {
         background-color: #0a477d;
@@ -132,11 +131,6 @@ footer {
         display: flex;
         flex-direction: column;
     }
-    .right-side-page{
-        /* margin-top: 3em;
-        margin-left: 3em;
-        margin-right: 3em; */
-    }
     footer {
         background-color: #0a477d;
         color: #fff;
@@ -148,13 +142,8 @@ footer {
         flex-wrap: wrap;
     }
     .right-side-page {
-        /* grid-area: 1 / 3 / 6 / 6; */
         background-color: #fff;
         justify-content: center;
         display: grid;
-        /* grid-template-columns: repeat(3, 1fr) repeat(2, 0);
-        grid-auto-rows: 6rem;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px; */
     }
 }
