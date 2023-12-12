@@ -29,5 +29,13 @@
             <div class="data-of-media-description box"><p>Homo Deus : Une brève histoire de l'avenir a été publié pour la première fois en hébreu en 2015. Traduit en plusieurs langues, il est publié en traduction anglaise en 2016 et en française aux éditions Albin Michel en septembre 2017.</p></div>
         </div>
     </section>
+    <footer>
+        <span>© 2023 Book Your Medias. All rights reserved</span>
+        <div class="socialMedias">
+            <img src="../../src/images/instagram.png" alt="instagram" class="media">
+            <img src="../../src/images/twitter.png" alt="twitter" class="media">
+            <img src="../../src/images/facebook.png" alt="facebook" class="media">
+        </div>
+    </footer>
 </body>
 </html>

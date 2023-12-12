@@ -23,7 +23,7 @@
 }
 
 .container-form-connexion form {
-    width: 75%;
+    width: 100%;
 }
 
 #inscription-connexion-user{
@@ -51,4 +51,66 @@ fieldset h1 {
 
 fieldset h1, :placeholder-shown, .style-button, .style-button, .subsribe-if-no-account {
     font-family: "roboto";
+}
+
+
+@media (426px <= width <= 768px) {
+    #inscription-connexion-user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-form-connexion form {
+        width: 100%;
+    }
+    .size-input-connexion {
+        /* width: 100%; */
+        height: 2.5em;
+        font-size: 1.4em;
+        border-radius: 0.3em;
+    }
+    .space-center-elements {
+        margin: 1.5em;
+    }
+    .container-form-connexion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #0A477D;
+        border-style: none;
+        border-radius: 1em;
+        width: 75%;
+    }
+}
+
+
+@media (50px <= width <= 425px) {
+    #inscription-connexion-user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-form-connexion form {
+        width: 100%;
+    }
+    .size-input-connexion {
+        /* width: 100%; */
+        height: 2.5em;
+        font-size: 1.7em;
+        border-radius: 0.3em;
+    }
+    .space-center-elements {
+        margin: 1.5em;
+    }
+    .container-form-connexion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #0A477D;
+        border-style: none;
+        border-radius: 1em;
+        width: 95%;
+    }
 }
