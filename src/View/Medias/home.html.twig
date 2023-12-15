@@ -1,0 +1,45 @@
+
+{% extends 'layout.html.twig' %}
+{%block stylesheet%}
+    <link rel="stylesheet" href="/assets/css/home.css">
+
+{% endblock %}
+{% block content %}
+
+  <nav>
+        <img src="assets/images/logo.png" alt="logo image" class="logoImg">
+        <img src="assets/images/profile.png" alt="profile icon" class="profileIcon">
+    </nav>
+
+    <header class="header">
+        <img src="assets/images/header.png" alt="header image" class="headerImg">
+    </header>
+
+    <div class="container">
+        <div class="searchBar">
+            <input type="text" placeholder="Search for a media..." class="searchInput" />
+            <button class="searchBtn">
+                <img src="assets/images/search.png" alt="search button" class="searchIcon" />
+            </button>
+        </div>
+        <div class="booksContainer">
+            <div class="booksGrid">
+                {% for media in medias %}
+                    <div class="book">
+                        <img src="media.cover_image" alt="{{ media.title }}" class="bookCover">
+                        <h1 class="bookTitle">{{ media.title }}</h1>
+                        <h2 class="bookAuthor">{{ media.description }}</h2>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <footer>
+        <span>© 2023 Book Your Medias. All rights reserved</span>
+        <div class="socialMedias">
+            <img src="assets/images/instagram.png" alt="instagram" class="media">
+            <img src="assets/images/twitter.png" alt="twitter" class="media">
+            <img src="assets/images/facebook.png" alt="facebook" class="media">
+        </div>
+    </footer>
+    </div>
+{% endblock %}

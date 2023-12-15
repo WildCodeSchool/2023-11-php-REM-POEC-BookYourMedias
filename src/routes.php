@@ -13,4 +13,10 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+
+    'home' => ['MediaController', 'index',],
+    'home/edit' => ['MediaController', 'edit', ['id']],
+    'home/show' => ['MediaController', 'show', ['id']],
+    'home/add' => ['MediaController', 'add',],
+    'home/delete' => ['MediaController', 'delete',],
 ];
