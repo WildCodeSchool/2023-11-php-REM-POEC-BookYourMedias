@@ -34,7 +34,7 @@
                     array('title' => "Les Misérables", 'author' => "Victor Hugo", 'image' => "https://m.media-amazon.com/images/I/510ypkdwIYL.jpg"),
                     array('title' => "Le Monde de Narnia", 'author' => "C.S Lewis", 'image' => "https://m.media-amazon.com/images/I/91u4fEsre2L._AC_UF1000,1000_QL80_.jpg"),
                 );
-
+                
                 foreach ($books as $book) {
                     echo '<div class="book">
                     <img src="' . $book['image'] . '" alt=' . $book['title'] . '" class=" . bookCover . ">
