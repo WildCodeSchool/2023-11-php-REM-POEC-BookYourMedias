@@ -57,13 +57,13 @@ class UserController extends AbstractController
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $credentials = array_map('trim', $_POST);
-            if (!$this->validateEntry($credentials, 'email')) {
+            if (!$this->validateEntry($credentials, 'adresse_email')) {
                 $errors[] = 'Veuillez remplir votre email';
             }
             if (!$this->validateEntry($credentials, 'pseudo')) {
                 $errors[] = 'Veuillez remplir votre pseudo';
             }
-            if (!$this->validateEntry($credentials, 'password')) {
+            if (!$this->validateEntry($credentials, 'mot_de_passe')) {
                 $errors[] = 'Veuillez remplir votre mot de passe';
             }
             if (empty($errors)) {
@@ -78,7 +78,7 @@ class UserController extends AbstractController
                 }
             }
         }
-        return $this->twig->render('User/register.html.twig');
+        return $this->twig->render('Item/Inscription/page_inscription.html.twig');
     }
 
     //faut-il ajouter dans 'routes.php' les méthodes privées
