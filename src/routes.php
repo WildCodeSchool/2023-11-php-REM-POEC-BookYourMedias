@@ -17,4 +17,10 @@ return [
     'page_connexion' => ['UserController', 'login',],
     'logout' => ['UserController', 'logout',],
     'register' => ['UserController', 'register',],
+
+    'home' => ['MediaController', 'index',],
+    'home/edit' => ['MediaController', 'edit', ['id']],
+    'home/show' => ['MediaController', 'show', ['id']],
+    'home/add' => ['MediaController', 'add',],
+    'home/delete' => ['MediaController', 'delete',],
 ];
