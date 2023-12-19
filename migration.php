@@ -19,7 +19,11 @@ try {
     $pdo->exec('DROP DATABASE IF EXISTS ' . DB_NAME);
     $pdo->exec('CREATE DATABASE ' . DB_NAME);
     $pdo->exec('USE ' . DB_NAME);
-    $pdo->exec('CREATE TABLE user (id INT PRIMARY KEY AUTO_INCREMENT, adresse_email VARCHAR(255) NOT NULL, mot_de_passe VARCHAR(255), pseudo VARCHAR(45)  NOT NULL, role BOOLEAN NULL');
+    $pdo->exec('CREATE TABLE user (id INT PRIMARY KEY AUTO_INCREMENT, 
+    adresse_email VARCHAR(255) NOT NULL, 
+    mot_de_passe VARCHAR(255), 
+    pseudo VARCHAR(45)  NOT NULL, 
+    role BOOLEAN NULL');
     if (is_file(DB_DUMP_PATH) && is_readable(DB_DUMP_PATH)) {
         $sql = file_get_contents(DB_DUMP_PATH);
         $statement = $pdo->prepare($sql);
