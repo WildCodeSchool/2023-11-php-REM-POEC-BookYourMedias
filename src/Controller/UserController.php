@@ -6,11 +6,9 @@ use App\Model\UserManager;
 
 class UserController extends AbstractController
 {
-    //user story : les utilisateurs peuvent se connecter
     public function login(): string
     {
         $errors = [];
-        //Vérifie si des champs ont des erreurs
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $credentials = array_map('trim', $_POST);
             if (
@@ -24,14 +22,10 @@ class UserController extends AbstractController
             if ($password === '') {
                 $errors[] = 'Veuillez saisir un mot de passe';
             }
-            //Si je n'ai pas d'erreur
             if (empty($errors)) {
-                //Je récupère l'user dans la BDD
                 $userManager = new UserManager();
                 $user = $userManager->selectOneByEmail($email);
-                //Je vérifie son mot de passe
                 if ($user && password_verify($password, $user['mot_de_passe'])) {
-                    //Si tout est OK, je configure la session afin de me rappeler de l'utilisateur
                     $_SESSION['user_id'] = $user['id'];
                     header('location: /');
                     exit();
@@ -40,18 +34,15 @@ class UserController extends AbstractController
                 }
             }
         }
-        // /!\modifier la route
         return $this->twig->render('Item/Connexion/page_connexion.html.twig');
     }
 
     public function logout()
     {
-        //Je supprime la clé de session, comme cela impossible de revenir dessus
         unset($_SESSION['user_id']);
         header('location: /');
     }
 
-    //user story : l'utilisateur peut créer un compte
     public function register(): string
     {
         $errors = [];
@@ -70,10 +61,7 @@ class UserController extends AbstractController
                 $credentials['adresse_email'] = htmlspecialchars($credentials['adresse_email']);
                 $credentials['pseudo'] = htmlspecialchars($credentials['pseudo']);
                 $userManager = new UserManager();
-                //J'enregistre l'utilisateur en base de données
-                //créer la méthode d'insertion des données dans le Model UserManager
                 if ($userManager->insert($credentials)) {
-                    //et je fais une auto connexion de cet utilisateur
                     return $this->login();
                 }
             }
@@ -81,7 +69,6 @@ class UserController extends AbstractController
         return $this->twig->render('Item/Inscription/page_inscription.html.twig');
     }
 
-    //faut-il ajouter dans 'routes.php' les méthodes privées
     private function validateEntry(array $credentials, string $field): bool
     {
         return !empty($credentials[$field]) && $credentials[$field] !== '';
