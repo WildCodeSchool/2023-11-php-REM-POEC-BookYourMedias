@@ -2,7 +2,7 @@
 {% extends 'layout.html.twig' %}
 {%block stylesheet%}
     <link rel="stylesheet" href="/assets/css/home.css">
-
+    
 {% endblock %}
 {% block content %}
 
@@ -19,11 +19,13 @@
         <div class="booksContainer">
             <div class="booksGrid">
                 {% for media in medias %}
+                    <a href="home/show?id={{ media.id }}">
                     <div class="book">
                         <img src="{{ media.cover_image }}" alt="{{ media.title }}" class="bookCover">
                         <h1 class="bookTitle">{{ media.title }}</h1>
                         <h2 class="bookAuthor">{{ media.author }}</h2>
                     </div>
+                    </a>
                 {% endfor %}
             </div>
         </div>
