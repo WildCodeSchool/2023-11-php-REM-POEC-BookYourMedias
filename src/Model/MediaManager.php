@@ -13,7 +13,9 @@ class MediaManager extends AbstractManager
      */
     public function insert(array $medias): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`title`, `date`, `description`, `cover_image`, `extract_link`, `isAvailable`) VALUES (:title, :date, :description, :cover_image, :extract_link, :isAvailable)");
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " 
+        (`title`, `date`, `description`, `cover_image`, `extract_link`, `isAvailable`) 
+        VALUES (:title, :date, :description, :cover_image, :extract_link, :isAvailable)");
         $statement->bindValue(':title', $medias['title'], PDO::PARAM_STR);
         $statement->bindValue(':date', $medias['date'], PDO::PARAM_STR);
         $statement->bindValue(':description', $medias['description'], PDO::PARAM_STR);

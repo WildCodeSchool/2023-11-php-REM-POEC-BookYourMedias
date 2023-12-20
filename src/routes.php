@@ -13,6 +13,10 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'login' => ['UserController', 'login',],
+    'page_connexion' => ['UserController', 'login',],
+    'logout' => ['UserController', 'logout',],
+    'register' => ['UserController', 'register',],
 
     'home' => ['MediaController', 'index',],
     'home/edit' => ['MediaController', 'edit', ['id']],
