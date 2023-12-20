@@ -19,5 +19,4 @@ return [
     'home/show' => ['MediaController', 'show', ['id']],
     'home/add' => ['MediaController', 'add',],
     'home/delete' => ['MediaController', 'delete',],
-    'home/media/reserver'=>['MediaController','book'],
 ];

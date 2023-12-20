@@ -23,8 +23,9 @@ class MediaController extends AbstractController
     public function show(int $id): string
     {
         $mediaManager = new MediaManager();
-        $media = $mediaManager->selectOneById($id);
-        return $this->twig->render('Medias/show.html.twig', ['media' => $media]);
+        $medias = $mediaManager->selectOneById($id);
+
+        return $this->twig->render('Medias/show.html.twig', ['medias' => $medias]);
     }
 
     /**
@@ -89,18 +90,5 @@ class MediaController extends AbstractController
 
             header('Location:/medias');
         }
-    }
-
-    public function book(): string
-    {
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            var_dump($_POST);
-        }
-        //Sécuriser le formulaire
-        //récupérer l'id de l'utilisateur depuis la session
-        //faire une méthode dans le manager pour réserver le livre
-        //Appeler cette méthode
-        //Renvoyer soit une page, soit un header vers l'accueil
-        return '';
     }
 }
