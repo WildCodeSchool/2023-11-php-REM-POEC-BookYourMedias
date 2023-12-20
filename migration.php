@@ -28,20 +28,7 @@ try {
     date_emprunt DATE,
     date_retour DATE,
     user_id INT,
-    medias_id INT,
-    FOREIGN KEY (id) REFERENCES user(id),
-    INDEX `fk_emprunt_user_idx` (`user_id` ASC) VISIBLE,
-    INDEX `fk_emprunt_medias1_idx` (`medias_id` ASC) VISIBLE,
-    CONSTRAINT `fk_emprunt_user`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `bookmediatest3v2`.`user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-    CONSTRAINT `fk_emprunt_medias1`
-    FOREIGN KEY (`medias_id`)
-    REFERENCES `bookmediatest3v2`.`medias` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)');
+    FOREIGN KEY (user_id) REFERENCES user(id))');
     $pdo->exec('CREATE TABLE auteur (id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR (150) NULL,
     last_name VARCHAR(150) NULL)');
@@ -62,6 +49,9 @@ try {
     FOREIGN KEY (id_emprunt) REFERENCES emprunt(id),
     FOREIGN KEY (id_user) REFERENCES user(id),
     FOREIGN KEY (id_auteur) REFERENCES auteur(id))');
+    $pdo ->exec('ALTER TABLE emprunt ADD COLUMN medias_id INT NOT NULL');
+    $pdo->exec('ALTER TABLE emprunt ADD FOREIGN KEY (medias_id) REFERENCES medias(id)');
+
     //ajouter des INSERT INTO pour les données à afficher
 
 
