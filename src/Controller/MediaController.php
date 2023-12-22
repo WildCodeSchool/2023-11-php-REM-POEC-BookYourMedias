@@ -13,13 +13,9 @@ class MediaController extends AbstractController
     {
         $mediaManager = new MediaManager();
         $medias = $mediaManager->selectAll('titre');
-        // return "toto";
         return $this->twig->render('Medias/home.html.twig', ['medias' => $medias]);
     }
 
-    /**
-     * Show informations for a specific medias
-     */
     public function show(int $id): string
     {
         $mediaManager = new MediaManager();
@@ -27,26 +23,15 @@ class MediaController extends AbstractController
         return $this->twig->render('Medias/show.html.twig', ['media' => $media]);
     }
 
-    /** 
-     * Edit a specific medias
-     */
     public function edit(int $id): ?string
     {
         $mediaManager = new MediaManager();
         $medias = $mediaManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // clean $_POST data
             $medias = array_map('trim', $_POST);
-
-            // TODO validations (length, format...)
-
-            // if validation is ok, update and redirection
             $mediaManager->update($medias);
-
             header('Location: /medias/show?id=' . $id);
-
-            // we are redirecting so we don't want any content rendered
             return null;
         }
 
@@ -93,7 +78,7 @@ class MediaController extends AbstractController
 
     public function book(): string
     {
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             var_dump($_POST);
         }
         //Sécuriser le formulaire
