@@ -1,0 +1,17 @@
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/header.css">
+{% endblock %}
+<nav class="nav-style">
+    <a href="/"><img src="./assets/images/logo-book-your-medias.png" alt="logo du site" width="150px"></a>
+    {% if user %}
+        <div class="link-log-register-space">
+            <a class="nav-link"> {{ user.pseudo }} </a>
+            <a class="nav-link" href="/items">Mon historique</a>
+            <a class="nav-link" href="/logout">Disconnect</a>
+        </div>
+    {% else %}
+        <div class="link-log-register-space">
+            <a class="nav-link" href="/login"><img src="./assets/images/profile.png" alt="photo d'un utilisateur"></a>
+        </div>
+    {% endif %}
+</nav>
