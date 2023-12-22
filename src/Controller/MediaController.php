@@ -12,7 +12,7 @@ class MediaController extends AbstractController
     public function index(): string
     {
         $mediaManager = new MediaManager();
-        $medias = $mediaManager->selectAll('title');
+        $medias = $mediaManager->selectAll('titre');
         // return "toto";
         return $this->twig->render('Medias/home.html.twig', ['medias' => $medias]);
     }

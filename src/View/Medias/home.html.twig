@@ -6,12 +6,12 @@
 {% endblock %}
 {% block content %}
 
-  <nav>
+  {# <nav>
         <img src="assets/images/logo.png" alt="logo image" class="logoImg">
         <img src="assets/images/profile.png" alt="profile icon" class="profileIcon">
-    </nav>
+    </nav> #}
 
-    <header class="header">
+ <header class="header">
         <img src="assets/images/header.png" alt="header image" class="headerImg">
     </header>
 
@@ -21,9 +21,9 @@
                 {% for media in medias %}
                     <a href="home/show?id={{ media.id }}">
                     <div class="book">
-                        <img src="{{ media.cover_image }}" alt="{{ media.title }}" class="bookCover">
-                        <h1 class="bookTitle">{{ media.title }}</h1>
-                        <h2 class="bookAuthor">{{ media.author }}</h2>
+                        <img src="{{ media.image_couverture }}" alt="{{ media.titre }}" class="bookCover">
+                        <h1 class="bookTitle">{{ media.titre }}</h1>
+                        <h2 class="bookAuthor">{{ media.id_auteur }}</h2>
                     </div>
                     </a>
                 {% endfor %}

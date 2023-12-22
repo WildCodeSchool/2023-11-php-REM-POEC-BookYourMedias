@@ -10,8 +10,8 @@
 
 <section id="presentation-media">
         <div class="left-side-page">
-            <img src="{{ media.cover_image }}"  alt="image de couverture" class="cover-picture">
-            <p class="size-available">Etat : <i>{% if media.isAvailable=="yes" %}Disponible{% else %}Indisponible{%endif%}</i></p>
+            <img src="{{ media.image_couverture }}"  alt="image de couverture" class="cover-picture">
+            <p class="size-available">Etat : <i>{% if media.disponible=="yes" %}Disponible{% else %}Indisponible{%endif%}</i></p>
             <p class="size-categorie">Catégorie : Livres</p>
             {#Faire un formulaire pour la réservation#}
             <form method="post" action="/home/media/reserver">
@@ -26,10 +26,10 @@
             <div class="info-labels-for-date box"><p>Date de parution</p></div>
             <div class="info-labels-for-description box"><p>Description</p></div>
     
-            <div class="data-of-media-title box"><p>{{ media.title }}</p></div>
-            <div class="data-of-media-author box"><p>{{media.author}}</p></div>
-            <div class="data-of-media-date box"><p>{{ media.date }}</p></div>
-            <div class="data-of-media-description box"><p>{{ media.description }}</p></div>
+            <div class="data-of-media-title box"><p>{{ media.titre }}</p></div>
+            <div class="data-of-media-author box"><p>{{media.id_auteur}}</p></div>
+            <div class="data-of-media-date box"><p>{{ media.published_date }}</p></div>
+            <div class="data-of-media-description box"><p>{{ media.description_media }}</p></div>
         </div>
     </section>
 {% endblock %}
