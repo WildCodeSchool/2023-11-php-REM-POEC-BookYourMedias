@@ -45,21 +45,21 @@ nav {
     width: 100%;
 }
 
-.booksGrid {
+/* .booksGrid {
     display: flex;
     justify-content: space-around;
-}
+} */
 
-.book {
+/* .book {
     height: 24rem;
     transition: transform 0.2s;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 4rem;
-}
+} */
 
-.book:hover {
+.booksContainer > a:hover {
     transform: scale(1.1);
 }
 
@@ -70,6 +70,13 @@ nav {
     font-size: large;
     font-family: "roboto";
     color: #0a477d;
+    width: 250px;
+    text-align: center;
+
+}
+
+.booksContainer > a {
+    text-decoration: none!important;
 }
 
 .bookAuthor {
@@ -90,9 +97,25 @@ nav {
 
 .booksContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    /* justify-content: center; */
 }
+
+  .booksContainer > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    transition: transform 0.2s;
+    margin-bottom: 4rem;
+    height: 25rem;
+
+  }
+
+  .book > img {
+    height: 20rem;
+    width: 15rem;
+  }
 
 footer {
     background-color: #0a477d;
@@ -117,11 +140,8 @@ footer > span {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .booksGrid {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .book {
+
+    .booksContainer > a {
         width: 50%;
         height: 20rem;
         display: flex;
@@ -133,11 +153,8 @@ footer > span {
 }
 
 @media screen and (max-width: 768px) {
-    .booksGrid {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .book {
+
+    .booksContainer > a {
         width: 100%;
         height: 18rem;
         display: flex;
