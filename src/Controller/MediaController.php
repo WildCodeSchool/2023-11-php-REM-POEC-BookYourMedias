@@ -27,7 +27,7 @@ class MediaController extends AbstractController
         return $this->twig->render('Medias/show.html.twig', ['media' => $media]);
     }
 
-    /**
+    /** 
      * Edit a specific medias
      */
     public function edit(int $id): ?string
