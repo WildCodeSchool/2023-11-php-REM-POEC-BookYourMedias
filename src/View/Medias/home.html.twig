@@ -1,0 +1,39 @@
+
+{% extends 'layout.html.twig' %}
+{%block stylesheet%}
+    <link rel="stylesheet" href="/assets/css/home.css">
+    
+{% endblock %}
+{% block content %}
+
+  {# <nav>
+        <img src="assets/images/logo.png" alt="logo image" class="logoImg">
+        <img src="assets/images/profile.png" alt="profile icon" class="profileIcon">
+    </nav> #}
+
+ <header class="header">
+        <img src="assets/images/header.png" alt="header image" class="headerImg">
+    </header>
+
+    <div class="container">
+        <div class="booksContainer">
+                {% for media in medias %}
+                    <a href="home/show?id={{ media.id }}">
+                    <div class="book">
+                        <img src="{{ media.image_couverture }}" alt="{{ media.titre }}" class="bookCover">
+                        <h1 class="bookTitle">{{ media.titre }}</h1>
+                        {#<h2 class="bookAuthor">{{ media.id_auteur }}</h2>#}
+                    </div>
+                    </a>
+                {% endfor %}
+        </div>
+        <footer>
+        <span>© 2023 Book Your Medias. All rights reserved</span>
+        <div class="socialMedias">
+            <img src="assets/images/instagram.png" alt="instagram" class="media">
+            <img src="assets/images/twitter.png" alt="twitter" class="media">
+            <img src="assets/images/facebook.png" alt="facebook" class="media">
+        </div>
+    </footer>
+    </div>
+{% endblock %}
