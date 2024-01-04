@@ -46,3 +46,23 @@ try {
         exit();
     }
 }
+
+
+//routing de MARMI 4
+// require __DIR__ . '/Controller/AdminController.php';
+// $urlPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+// $recipeController = new App\Controller\AdminController(); //chemin pour amener auprès de la classe
+// if ('/browse' === $urlPath) {
+//     echo $recipeController->browse();   //obliger de mettre un 'echo'
+// } elseif ('/show' === $urlPath && isset($_GET['id'])) {
+//     $recipeController->show($_GET["id"]);
+// } elseif ('/add' === $urlPath) {
+//     $recipeController->add();
+// } elseif ('/delete' === $urlPath && isset($_GET['id']) ) {
+//     $recipeController->delete($_GET["id"]);
+// } elseif ('/update' === $urlPath && isset($_GET['id']) ) {
+//     $recipeController->update($_GET["id"]);
+// }
+//  else {
+//     header('HTTP/1.1 404 Not Found');
+// }

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Centre administrateur</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        <link rel="stylesheet" href="../assets/css/navAdmin.css">
+        <link rel="stylesheet" href="../assets/css/cardAdminMenu.css">
+    </head>
+    <body>
+        <main class="container">
+            <div class="navAdmin"> 
+                <a href="/admin">Centre administrateur</a>
+                <a href="/admin/add">Ajouter un média</a>
+                <a href="/auteur/add">Ajouter un auteur</a>
+                <a href="/categorie/add">Ajouter une catégorie</a>
+                <a href="/">Retour à l'accueil</a>
+            </div>
+                <h1>📂 Centre administrateur</h1>
+
+            <div class="card">
+                <div class="container2">
+                <h3>⏏️ MEDIA</h3>
+                    <a href="/admin/listMedia" role="button" class="outline">Liste des médias</a>
+                    <a href="/admin/add" role="button">Ajouter un média</a>
+                </div>
+                <div class="container2">
+                <h3>👩‍🦰 AUTEUR</h3>
+                    <a href="/auteur/list" role="button" class="outline">Liste des auteurs</a>
+                    <a href="/auteur/add" role="button">Ajouter un auteur</a>
+                </div>
+                <div class="container2">
+                <h3>🏷️ CATEGORIE</h3>
+                    <a href="/categorie/list" role="button" class="outline">Liste des catégories</a>
+                    <a href="/categorie/add" role="button">Ajouter une catégorie</a>
+                </div>
+            </div>
+            <br><hr><br>
+            <h3>📱 Tableau de bord</h3>
+            <div class="responsiveTableAdmin">
+                <table class="table">
+                    <tr>
+                        <th><b>Id</b></th>
+                        <th><b>Titre</b></th>
+                        <th><b>Auteur</b></th>
+                        <th><b>Date de publication</b></th>
+                        <th><b>Categorie</b></th>
+                        <th><b>Etat de disponibilité</b></th>
+                        <th><b>Actions<b></th>
+                    </tr>
+                    {% for media in medias %} 
+                        {% if media['disponible'] == 0 %}
+                            <tr>
+                                <td>{{ media['id'] }}</td>
+                                <td>{{ media['titre'] }}</td>
+                                <td>{{ media['name'] }}</td>
+                                <td>{{ media['published_date'] }}</td>
+                                <td>{{ media['name_categorie'] }}</td>
+                                {% if media['disponible'] == 1 %}
+                                    <td>Disponible</td>
+                                {% elseif media['disponible'] == 0 %}
+                                    <td>Indisponible</td>
+                                {% endif %}
+                                <td class="actionButtons">
+                                    <a href="#" role="button">Notifier son retour</a>
+                                    <a href="#" role="button" class="outline redButton">Supprimer</a>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </table>
+            </div>
+        </main>
+    </body>
+</html>

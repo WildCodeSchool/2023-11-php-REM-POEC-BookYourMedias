@@ -7,6 +7,9 @@
     <section id="inscription-connexion-user">
         <fieldset class="container-form-connexion">
             <h1>Connexion</h1>
+            <?php foreach ($errors as $error) : ?>
+                <p><?= $error ?></p>
+            <?php endforeach; ?>
             <form action="" method="post">
                 <div class="space-center-elements">
                     <input type="email" id="user_email" name="adresse_email" placeholder="Courriel" class="size-input-connexion" required>

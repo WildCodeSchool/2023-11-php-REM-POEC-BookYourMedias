@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Ajouter un nouvel auteur</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        <link rel="stylesheet" href="../assets/css/navAdmin.css">
+    </head>
+    <body>
+        <main class="container">
+        <div class="navAdmin"> 
+            <a href="/admin">Centre administrateur</a>
+            <a href="/admin/add">Ajouter un média</a>
+            <a href="/auteur/add">Ajouter un auteur</a>
+            <a href="/categorie/add">Ajouter une catégorie</a>
+        </div>
+            <h1>👩‍🦰 Ajouter un nouvel auteur·rice</h1>
+
+            <?php foreach ($errors as $error) : ?>
+                <p><?= $error ?></p>
+            <?php endforeach; ?>
+
+            <form action="" method="post">
+                <div>
+                    <label for="name">Nom de l'auteur·rice  : </label>
+                    <input id="name" name="name" type="text" value="{{ auteur.name }}">
+                </div>
+                <button>Ajouter l'auteur</button>
+            </form>
+        </main>
+    </body>
+</html>
