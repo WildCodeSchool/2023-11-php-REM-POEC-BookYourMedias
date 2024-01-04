@@ -6,10 +6,9 @@ use PDO;
 
 class AuteurManager extends AbstractManager
 {
-
     public function getAll(): array|bool
     {
-        $statement = $this -> pdo -> query('SELECT id, name FROM auteur ORDER BY id DESC');
+        $statement = $this->pdo->query('SELECT id, name FROM auteur ORDER BY id DESC');
         $medias = $statement->fetchAll(\PDO::FETCH_ASSOC);
 
         return $medias;
@@ -26,7 +25,7 @@ class AuteurManager extends AbstractManager
         return (int)$this->pdo->lastInsertId();
     }
 
-        /**
+    /**
      * Get all row from database.
      */
     public function selectAll(string $orderBy = '', string $direction = 'ASC'): array

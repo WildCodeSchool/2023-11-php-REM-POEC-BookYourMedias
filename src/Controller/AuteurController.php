@@ -14,7 +14,7 @@ class AuteurController extends AbstractController
     {
         $this->model = new AuteurManager();
         $loader = new FilesystemLoader(__DIR__ . '/../View/Auteur');
-        $this -> twig = new Environment($loader);//ajoute automatiquement dans USE
+        $this->twig = new Environment($loader); //ajoute automatiquement dans USE
     }
     /**
      * Display auteur$auteur creation page
@@ -66,7 +66,5 @@ class AuteurController extends AbstractController
         return $this->twig->render('/listAuteur.html.twig', [
             'auteurs' => $auteur
         ]);
-
     }
-
 }

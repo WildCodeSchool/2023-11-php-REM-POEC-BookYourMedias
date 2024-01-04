@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Model;
+
 use PDO;
 
 class AdminManager extends AbstractManager
 {
-
     public function getAll(): array|bool
     {
-        $statement = $this -> pdo -> query('SELECT m.id, m.titre, m.published_date, m.id_auteur, m.disponible, a.name, c.name_categorie FROM medias m LEFT JOIN auteur a ON m.id_auteur = a.id LEFT JOIN categorie c ON m.id_categorie = c.id');
+        $statement = $this->pdo->query('SELECT m.id, m.titre, m.published_date, m.id_auteur, m.disponible, a.name, c.name_categorie FROM medias m LEFT JOIN auteur a ON m.id_auteur = a.id LEFT JOIN categorie c ON m.id_categorie = c.id');
         $medias = $statement->fetchAll(\PDO::FETCH_ASSOC);
 
         return $medias;
@@ -68,5 +68,4 @@ class AdminManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
-
 }

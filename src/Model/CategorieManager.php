@@ -6,10 +6,9 @@ use PDO;
 
 class CategorieManager extends AbstractManager
 {
-
     public function getAll(): array|bool
     {
-        $statement = $this -> pdo -> query('SELECT id, name_categorie FROM categorie ORDER BY id DESC');
+        $statement = $this->pdo->query('SELECT id, name_categorie FROM categorie ORDER BY id DESC');
         $medias = $statement->fetchAll(\PDO::FETCH_ASSOC);
 
         return $medias;
@@ -26,7 +25,7 @@ class CategorieManager extends AbstractManager
         return (int)$this->pdo->lastInsertId();
     }
 
-        /**
+    /**
      * Get all row from database.
      */
     public function selectAll(string $orderBy = '', string $direction = 'ASC'): array

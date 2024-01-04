@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Controller; //mettre le chemin
-use App\Model\AdminManager; //amener le namespace
+namespace App\Controller;
+
+use App\Model\AdminManager;
 use App\Model\CategorieManager;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-//The use keyword has two purposes: it tells a class to inherit a trait and it gives an alias to a namespace.
-
-// require __DIR__ . '/../Models/RecipeModel.php';      plus la pein d'utiliser un require, car on utilise le namespace
 
 class AdminController
 {
@@ -35,8 +33,8 @@ class AdminController
     {
         if (isset($_SESSION['user_role'])) {
             $user = $_SESSION['user_role'];
-        }else {
-            $user = NULL;
+        } else {
+            $user = null;
         }
 
         if ($user == 1) {

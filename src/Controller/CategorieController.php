@@ -18,7 +18,7 @@ class CategorieController extends AbstractController
     {
         $this->model = new CategorieManager();
         $loader = new FilesystemLoader(__DIR__ . '/../View/Categorie');
-        $this -> twig = new Environment($loader);//ajoute automatiquement dans USE
+        $this->twig = new Environment($loader); //ajoute automatiquement dans USE
     }
     /**
      * Display categorie$categorie creation page
@@ -72,6 +72,5 @@ class CategorieController extends AbstractController
         return $this->twig->render('/listCategorie.html.twig', [
             'categories' => $categorie
         ]);
-
     }
 }
