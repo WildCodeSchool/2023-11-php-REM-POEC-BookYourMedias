@@ -63,8 +63,11 @@ class UserController extends AbstractController
                 $credentials['adresse_email'] = htmlspecialchars($credentials['adresse_email']);
                 $credentials['pseudo'] = htmlspecialchars($credentials['pseudo']);
                 $userManager = new UserManager();
-                if ($userManager->insert($credentials)) {
-                    return $this->login();
+                $user = $userManager->insert($credentials);
+                if ($user) {
+                    $_SESSION['user_id'] = $user;
+                    $_SESSION['user_role'] = 0;
+                    header('Location: /');
                 }
             }
         }
