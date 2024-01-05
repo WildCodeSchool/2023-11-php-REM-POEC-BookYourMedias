@@ -26,6 +26,14 @@ class AdminManager extends AbstractManager
         return $medias;
     }
 
+    public function getLastMediaAdded(): array|bool
+    {
+        $statement = $this->pdo->query('select * from medias ORDER BY id DESC LIMIT 1;');
+        $lastMedia = $statement->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $lastMedia;
+    }
+
     public function save(array $medias): void
     {
         $query = 'INSERT INTO medias(titre, description) VALUES (:titre, :description)';
@@ -58,12 +66,13 @@ class AdminManager extends AbstractManager
     public function insert(array $medias): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(titre, published_date, description_media,
-        image_couverture, lien_extrait, id_categorie) VALUES (:titre, :published_date, :description_media, :image_couverture, :lien_extrait, :id_categorie)");
+        image_couverture, lien_extrait, id_auteur, id_categorie) VALUES (:titre, :published_date, :description_media, :image_couverture, :lien_extrait, :id_auteur, :id_categorie)");
         $statement->bindValue(':titre', $medias['titre'], PDO::PARAM_STR);
         $statement->bindValue(':published_date', $medias['published_date'], PDO::PARAM_STR);
         $statement->bindValue(':description_media', $medias['description_media'], PDO::PARAM_STR);
         $statement->bindValue(':image_couverture', $medias['image_couverture'], PDO::PARAM_STR);
         $statement->bindValue(':lien_extrait', $medias['lien_extrait'], PDO::PARAM_STR);
+        $statement->bindValue(':id_auteur', $medias['id_auteur'], PDO::PARAM_STR);
         $statement->bindValue(':id_categorie', $medias['id_categorie'], PDO::PARAM_STR);
         $statement->execute();
         return (int)$this->pdo->lastInsertId();

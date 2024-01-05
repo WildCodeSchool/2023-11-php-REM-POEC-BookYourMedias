@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\AdminManager;
+use App\Model\AuteurManager;
 use App\Model\CategorieManager;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
@@ -50,8 +51,9 @@ class AdminController
     public function browse(): string
     {
         $medias = $this->model->getAll();
+        $lastMedia = $this->model->getLastMediaAdded();
         return $this->twig->render('/listMedia.html.twig', [
-            'medias' => $medias,
+            'medias' => $medias, 'lastMedia' => $lastMedia,
         ]);
     }
 
@@ -79,6 +81,8 @@ class AdminController
     {
         $categories = new CategorieManager();
         $categoriesOptions = $categories->selectAll();
+        $auteurs = new AuteurManager();
+        $auteursOptions = $auteurs->selectAll();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors = [];
             $media = array_map('trim', $_POST);
@@ -98,6 +102,9 @@ class AdminController
             if (strlen($media['lien_extrait']) === 0) {
                 $errors[] = "Lien extrait obligatoire";
             }
+            if (strlen($media['id_auteur']) === 0) {
+                $errors[] = "Auteur obligatoire";
+            }
             if (strlen($media['id_categorie']) === 0) {
                 $errors[] = "Catégorie obligatoire";
             }
@@ -106,13 +113,10 @@ class AdminController
                 $mediaManager->insert($media);
                 header('Location: /admin/listMedia');
             }
-
-            return $this->twig->render('/addNewMedia.html.twig', ['categories' => $categoriesOptions]);
+            return $this->twig->render('/addNewMedia.html.twig', ['auteurs' => $auteursOptions, 'categories' => $categoriesOptions]);
         }
 
-        return $this->twig->render('/addNewMedia.html.twig', [
-            'categories' => $categoriesOptions
-        ]);
+        return $this->twig->render('/addNewMedia.html.twig', ['auteurs' => $auteursOptions, 'categories' => $categoriesOptions]);
     }
 
 

@@ -9,12 +9,13 @@
     </head>
     <body>
         <main class="container">
-        <div class="navAdmin">
-            <a href="/admin">Centre administrateur</a>
-            <a href="/admin/add">Ajouter un média</a>
-            <a href="/auteur/add">Ajouter un auteur</a>
-            <a href="/categorie/add">Ajouter une catégorie</a>
-        </div>
+            <div class="navAdmin"> 
+                <a href="/admin">Centre administrateur</a>
+                <a href="/admin/add">Ajouter un média</a>
+                <a href="/auteur/add">Ajouter un auteur</a>
+                <a href="/categorie/add">Ajouter une catégorie</a>
+                <a href="/">Retour à l'accueil</a>
+            </div>
             <h1>⏏️ Ajouter un nouveau média</h1>
 
             <?php foreach ($errors as $error) : ?>
@@ -43,6 +44,19 @@
                     <textarea id="lien_extrait" name="lien_extrait">{{ medias.lien_extrait }}</textarea>
                 </div>
                 <div>
+                    <label for="id_auteur">Auteur</label>
+                    <select name="id_auteur" id="id_auteur">
+                        <option value="">--Veuillez séléctionner un auteur--</option>
+                        {% for auteur in auteurs %}
+                            <option value="{{ auteur.id }}">{{ auteur.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="unavailableInList">
+                        <p>Auteur indisponibles ? Créer le maintenant :</p>
+                        <a href="/auteur/add" role="button" class="outline">Ajouter un auteur</a>
+                    </div>
+                </div>
+                <div>
                     <label for="id_categorie">Catégorie</label>
                     <select name="id_categorie" id="id_categorie">
                         <option value="">--Veuillez séléctionner une catégorie--</option>
@@ -50,6 +64,10 @@
                             <option value="{{ categorie.id }}">{{ categorie.name_categorie }}</option>
                         {% endfor %}
                     </select>
+                    <div class="unavailableInList">
+                        <p>Catégorie indisponibles ? Créer le maintenant :</p>
+                        <a href="/categorie/add" role="button" class="outline">Ajouter une catégorie</a>
+                    </div>
                 </div>
                 <button>Ajouter</button>
             </form>
