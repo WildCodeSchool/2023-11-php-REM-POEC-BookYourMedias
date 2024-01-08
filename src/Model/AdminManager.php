@@ -8,7 +8,9 @@ class AdminManager extends AbstractManager
 {
     public function getAll(): array|bool
     {
-        $statement = $this->pdo->query('SELECT m.id, m.titre, m.published_date, m.id_auteur, m.disponible, a.name, c.name_categorie FROM medias m LEFT JOIN auteur a ON m.id_auteur = a.id LEFT JOIN categorie c ON m.id_categorie = c.id');
+        $statement = $this->pdo->query('SELECT m.id, m.titre, m.published_date, 
+        m.id_auteur, m.disponible, a.name, c.name_categorie 
+        FROM medias m LEFT JOIN auteur a ON m.id_auteur = a.id LEFT JOIN categorie c ON m.id_categorie = c.id');
         $medias = $statement->fetchAll(\PDO::FETCH_ASSOC);
 
         return $medias;
@@ -51,6 +53,14 @@ class AdminManager extends AbstractManager
         $statement->execute();
     }
 
+    public function isBack(int $id): void
+    {
+        $query = 'UPDATE medias SET disponible=1 WHERE id=:id';
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
     public function update(array $medias, $id): void
     {
         $query = 'UPDATE medias SET titre=:titre, description=:description WHERE id=:id';
@@ -66,7 +76,9 @@ class AdminManager extends AbstractManager
     public function insert(array $medias): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . "(titre, published_date, description_media,
-        image_couverture, lien_extrait, id_auteur, id_categorie) VALUES (:titre, :published_date, :description_media, :image_couverture, :lien_extrait, :id_auteur, :id_categorie)");
+        image_couverture, lien_extrait, id_auteur, id_categorie) 
+        VALUES (:titre, :published_date, :description_media, :image_couverture, 
+        :lien_extrait, :id_auteur, :id_categorie)");
         $statement->bindValue(':titre', $medias['titre'], PDO::PARAM_STR);
         $statement->bindValue(':published_date', $medias['published_date'], PDO::PARAM_STR);
         $statement->bindValue(':description_media', $medias['description_media'], PDO::PARAM_STR);

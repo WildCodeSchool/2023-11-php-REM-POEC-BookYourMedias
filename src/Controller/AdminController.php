@@ -57,26 +57,6 @@ class AdminController
         ]);
     }
 
-    public function show(int $id)
-    {
-        $id = filter_var($id, FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]]);
-        if (false === $id || null === $id) {
-            exit("Wrong input parameter");
-        }
-
-        // Fetching a recipe
-        $medias = $this->model->getById($id);
-
-        // Result check
-        if (!isset($medias['title']) || !isset($medias['description'])) {
-            header("HTTP/1.1 404 Not Found");
-            die("Recipe not found");
-        }
-
-        // Generate the web page
-        require __DIR__ . '/../View/Admin/listMedia.html.twig';
-    }
-
     public function add()
     {
         $categories = new CategorieManager();
@@ -113,10 +93,16 @@ class AdminController
                 $mediaManager->insert($media);
                 header('Location: /admin/listMedia');
             }
-            return $this->twig->render('/addNewMedia.html.twig', ['auteurs' => $auteursOptions, 'categories' => $categoriesOptions]);
+            return $this->twig->render('/addNewMedia.html.twig', [
+                'auteurs' => $auteursOptions,
+                'categories' => $categoriesOptions
+            ]);
         }
 
-        return $this->twig->render('/addNewMedia.html.twig', ['auteurs' => $auteursOptions, 'categories' => $categoriesOptions]);
+        return $this->twig->render('/addNewMedia.html.twig', [
+            'auteurs' => $auteursOptions,
+            'categories' => $categoriesOptions
+        ]);
     }
 
 
@@ -139,7 +125,13 @@ class AdminController
     public function delete(int $id)
     {
         $this->model->delete($id);
-        header('Location: /');
+        header('Location: /admin');
+    }
+
+    public function isBack(int $id)
+    {
+        $this->model->isBack($id);
+        header('Location: /admin');
     }
 
     public function update(int $id)

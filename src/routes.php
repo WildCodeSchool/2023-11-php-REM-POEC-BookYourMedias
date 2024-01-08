@@ -31,6 +31,8 @@ return [
     'admin' => ['AdminController', 'indexAdmin'],
     'admin/listMedia' => ['AdminController', 'browse'],
     'admin/add' => ['AdminController', 'add'],
+    'admin/isBack' => ['AdminController', 'isBack', ['id']],
+    'admin/delete' => ['AdminController', 'delete', ['id']],
     'categorie/add' => ['CategorieController','add'],
     'categorie/list' => ['CategorieController','browse'],
     'auteur/add' => ['AuteurController', 'add'],

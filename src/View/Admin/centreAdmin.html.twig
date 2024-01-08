@@ -18,26 +18,6 @@
                 <a href="/">Retour à l'accueil</a>
             </div>
             <h1>🗃️ Centre administrateur</h1>
-            <hr><br>
-            <h3>📋 Gestion des labels</h3>
-            <div class="card">
-                <div class="container2">
-                <h4>⏏️ MEDIA</h4>
-                    <a href="/admin/listMedia" role="button" class="outline">Liste des médias</a>
-                    <a href="/admin/add" role="button">Ajouter un média</a>
-                </div>
-                <div class="container2">
-                <h4>👩‍🦰 AUTEUR</h4>
-                    <a href="/auteur/list" role="button" class="outline">Liste des auteurs</a>
-                    <a href="/auteur/add" role="button">Ajouter un auteur</a>
-                </div>
-                <div class="container2">
-                <h4>🏷️ CATEGORIE</h4>
-                    <a href="/categorie/list" role="button" class="outline">Liste des catégories</a>
-                    <a href="/categorie/add" role="button">Ajouter une catégorie</a>
-                </div>
-            </div>
-            <br><hr><br>
             <h3>📱 Tableau de bord</h3>
             <div class="responsiveTableAdmin">
                 <table class="table">
@@ -64,14 +44,33 @@
                                     <td>Indisponible</td>
                                 {% endif %}
                                 <td class="actionButtons">
-                                    <a href="#" role="button">Notifier son retour</a>
-                                    <a href="#" role="button" class="outline redButton">Supprimer</a>
+                                    <a href="admin/isBack?id={{ media.id }}" role="button">Notifier son retour</a>
+                                    <a href="admin/delete?id={{ media.id }}" role="button" class="outline redButton">Supprimer</a>
                                 </td>
                             </tr>
                         {% endif %}
                     {% endfor %}
                 </table>
             </div>
+            <hr><br>
+            <h3>📋 Gestion des labels</h3>
+            <div class="card">
+                <div class="container2">
+                <h4>⏏️ MEDIA</h4>
+                    <a href="/admin/listMedia" role="button" class="outline">Liste des médias</a>
+                    <a href="/admin/add" role="button">Ajouter un média</a>
+                </div>
+                <div class="container2">
+                <h4>👩‍🦰 AUTEUR</h4>
+                    <a href="/auteur/list" role="button" class="outline">Liste des auteurs</a>
+                    <a href="/auteur/add" role="button">Ajouter un auteur</a>
+                </div>
+                <div class="container2">
+                <h4>🏷️ CATEGORIE</h4>
+                    <a href="/categorie/list" role="button" class="outline">Liste des catégories</a>
+                    <a href="/categorie/add" role="button">Ajouter une catégorie</a>
+                </div>
+            </div>            
         </main>
     </body>
 </html>
