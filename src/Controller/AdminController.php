@@ -14,15 +14,6 @@ class AdminController
 
     private Environment $twig;
 
-    /**
-     * Display cupcake creation page
-     * Route /cupcake/add
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
-
     public function __construct()
     {
         $this->model = new AdminManager();

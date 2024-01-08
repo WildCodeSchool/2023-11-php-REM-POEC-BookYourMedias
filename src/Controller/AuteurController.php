@@ -16,14 +16,7 @@ class AuteurController extends AbstractController
         $loader = new FilesystemLoader(__DIR__ . '/../View/Auteur');
         $this->twig = new Environment($loader); //ajoute automatiquement dans USE
     }
-    /**
-     * Display auteur$auteur creation page
-     * Route /auteur$auteur/addAuteur
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
+
     public function add(): string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -45,21 +38,6 @@ class AuteurController extends AbstractController
         return $this->twig->render('/addAuteur.html.twig');
     }
 
-    /**
-     * Display list of auteur
-     * Route /auteur$auteur/list
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
-    // public function list()
-    // {
-    //     //TODO Add your code here to retrieve all auteur
-    //     $accessoryManager = new AuteurManager();
-    //     $auteur = $accessoryManager->selectAll();
-    //     return $this->twig->render('Auteur/listAuteur.html.twig', ['auteur' => $auteur]);
-    // }
     public function browse(): string
     {
         $auteur = $this->model->getAll();
