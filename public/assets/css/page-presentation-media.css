@@ -36,7 +36,6 @@
 
 .right-side-page {
     grid-area: 1 / 3 / 6 / 6;
-    background-color: #fff;
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr) repeat(2, 0);
@@ -72,7 +71,6 @@
 .info-labels-for-date p,
 .info-labels-for-description p{
     text-decoration: underline;
-    color: #0A477D;
 }
 
 .box {
@@ -85,12 +83,10 @@
 }
 
 .style-button {
-    background-color: #0A477D;
     border-radius: 1rem;
-    color: #fff;
     cursor: pointer;
     font-size: 1.5rem;
-    height: 2em;
+    height: 3em;
     font-family: "roboto";
     border: none;
     padding-left: 2rem;
