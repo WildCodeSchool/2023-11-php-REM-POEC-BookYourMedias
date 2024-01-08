@@ -66,16 +66,16 @@ class AdminController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors = [];
             $media = array_map('trim', $_POST);
-            // TODO validations (length, format...)
-            if (strlen($media['titre']) === 0 || strlen($media['titre']) > 255) {
-                $errors[] = "Titre obligatoire";
-            }
+            $errors = $this -> validate($media);
+            // if (strlen($media['titre']) === 0 || strlen($media['titre']) > 255) {
+            //     $errors[] = "Titre obligatoire";
+            // }
             if (strlen($media['published_date']) === 0 || strlen($media['published_date']) > 10) {
                 $errors[] = "Date de publication obligatoire";
             }
-            if (strlen($media['description_media']) === 0) {
-                $errors[] = "Description obligatoire";
-            }
+            // if (strlen($media['description_media']) === 0) {
+            //     $errors[] = "Description obligatoire";
+            // }
             if (strlen($media['image_couverture']) === 0) {
                 $errors[] = "Image de couverture obligatoire";
             }
@@ -109,6 +109,7 @@ class AdminController
 
     private function validate(array $medias)
     {
+        $errors = [];
         if (empty($medias['title'])) {
             $errors[] = 'The title is required';
         }
@@ -119,7 +120,7 @@ class AdminController
             $errors[] = 'The title should be less than 255 characters';
         }
 
-        return $errors ?? [];
+        return $errors;
     }
 
     public function delete(int $id)
