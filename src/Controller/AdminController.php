@@ -67,15 +67,9 @@ class AdminController
             $errors = [];
             $media = array_map('trim', $_POST);
             $errors = $this -> validate($media);
-            // if (strlen($media['titre']) === 0 || strlen($media['titre']) > 255) {
-            //     $errors[] = "Titre obligatoire";
-            // }
             if (strlen($media['published_date']) === 0 || strlen($media['published_date']) > 10) {
                 $errors[] = "Date de publication obligatoire";
             }
-            // if (strlen($media['description_media']) === 0) {
-            //     $errors[] = "Description obligatoire";
-            // }
             if (strlen($media['image_couverture']) === 0) {
                 $errors[] = "Image de couverture obligatoire";
             }
