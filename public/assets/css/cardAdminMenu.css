@@ -54,3 +54,9 @@ tr:nth-child(even) {
     color: var(--toto);
     border-color: var(--toto);
 }
+
+.listMedias {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4%;
+}

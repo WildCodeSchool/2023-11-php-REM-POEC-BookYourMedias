@@ -125,7 +125,7 @@ class AdminController
     public function delete(int $id)
     {
         $this->model->delete($id);
-        header('Location: /admin');
+        header('Location: /admin/listMedia');
     }
 
     public function isBack(int $id)
