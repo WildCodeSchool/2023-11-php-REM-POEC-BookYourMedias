@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Ajouter un nouveau média</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        <link rel="stylesheet" href="../assets/css/navAdmin.css">
+    </head>
+    <body>
+        <main class="container">
+            <div class="navAdmin"> 
+                <a href="/admin">Centre administrateur</a>
+                <a href="/admin/add">Ajouter un média</a>
+                <a href="/auteur/add">Ajouter un auteur</a>
+                <a href="/categorie/add">Ajouter une catégorie</a>
+                <a href="/">Retour à l'accueil</a>
+            </div>
+            <h1>⏏️ Ajouter un nouveau média</h1>
+
+            <?php foreach ($errors as $error) : ?>
+                <p><?= $error ?></p>
+            <?php endforeach; ?>
+
+            <form action="" method="post">
+                <div>
+                    <label for="titre">Titre</label>
+                    <input id="titre" name="titre" type="text" value="{{ medias.titre }}">
+                </div>
+                <div>
+                    <label for="published_date">Date de publication</label>
+                    <input id="published_date" name="published_date" type="date" value="{{ medias.published_date }}" >
+                </div>
+                <div>
+                    <label for="description_media">Description</label>
+                    <textarea id="description_media" name="description_media">{{ medias.description_media }}</textarea>
+                </div>
+                <div>
+                    <label for="image_couverture">Lien image de couverture</label>
+                    <textarea id="image_couverture" name="image_couverture">{{ medias.image_couverture }}</textarea>
+                </div>
+                <div>
+                    <label for="lien_extrait">Lien extrait du média</label>
+                    <textarea id="lien_extrait" name="lien_extrait">{{ medias.lien_extrait }}</textarea>
+                </div>
+                <div>
+                    <label for="id_auteur">Auteur</label>
+                    <select name="id_auteur" id="id_auteur">
+                        <option value="">--Veuillez séléctionner un auteur--</option>
+                        {% for auteur in auteurs %}
+                            <option value="{{ auteur.id }}">{{ auteur.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="unavailableInList">
+                        <p>Auteur indisponibles ? Créer le maintenant :</p>
+                        <a href="/auteur/add" role="button" class="outline">Ajouter un auteur</a>
+                    </div>
+                </div>
+                <div>
+                    <label for="id_categorie">Catégorie</label>
+                    <select name="id_categorie" id="id_categorie">
+                        <option value="">--Veuillez séléctionner une catégorie--</option>
+                        {% for categorie in categories %}
+                            <option value="{{ categorie.id }}">{{ categorie.name_categorie }}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="unavailableInList">
+                        <p>Catégorie indisponibles ? Créer le maintenant :</p>
+                        <a href="/categorie/add" role="button" class="outline">Ajouter une catégorie</a>
+                    </div>
+                </div>
+                <button>Ajouter</button>
+            </form>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Liste des auteur·rice·s</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        <link rel="stylesheet" href="../assets/css/navAdmin.css">
+    </head>
+    <body>
+        <main class="container">
+            <div class="navAdmin"> 
+                <a href="/admin">Centre administrateur</a>
+                <a href="/admin/add">Ajouter un média</a>
+                <a href="/auteur/add">Ajouter un auteur</a>
+                <a href="/categorie/add">Ajouter une catégorie</a>
+            </div>
+          <h2>Liste des auteur·rice·s</h2>
+            <ul>
+                {% for auteur in auteurs %} 
+                    <li>
+                        <p>
+                            {{ auteur['name'] }}
+                        </p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </main>
+    </body>
+</html>

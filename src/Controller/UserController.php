@@ -27,6 +27,7 @@ class UserController extends AbstractController
                 $user = $userManager->selectOneByEmail($email);
                 if ($user && password_verify($password, $user['mot_de_passe'])) {
                     $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['user_role'] = $user['role'];
                     header('location: /');
                     exit();
                 } else {
@@ -40,6 +41,7 @@ class UserController extends AbstractController
     public function logout()
     {
         unset($_SESSION['user_id']);
+        unset($_SESSION['user_role']);
         header('location: /');
     }
 
@@ -61,8 +63,11 @@ class UserController extends AbstractController
                 $credentials['adresse_email'] = htmlspecialchars($credentials['adresse_email']);
                 $credentials['pseudo'] = htmlspecialchars($credentials['pseudo']);
                 $userManager = new UserManager();
-                if ($userManager->insert($credentials)) {
-                    return $this->login();
+                $user = $userManager->insert($credentials);
+                if ($user) {
+                    $_SESSION['user_id'] = $user;
+                    $_SESSION['user_role'] = 0;
+                    header('Location: /');
                 }
             }
         }
