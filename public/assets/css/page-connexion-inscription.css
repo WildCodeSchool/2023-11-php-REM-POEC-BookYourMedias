@@ -30,9 +30,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 3%;
+
 }
 .space-center-elements {
-    margin: 2.5em 5em;
+    margin: 0.5em 5em;
 }
 fieldset h1 {
     color: #fff;
@@ -43,6 +45,7 @@ fieldset h1 {
     height: 2.5em;
     font-size: 1.3em;
     border-radius: 0.3em;
+    background-color: #fff;
 }
 .subsribe-if-no-account {
     padding-top: 2em;
