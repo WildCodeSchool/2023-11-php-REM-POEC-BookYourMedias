@@ -51,4 +51,15 @@ class MediaManager extends AbstractManager
 
         return $statement->execute();
     }
+
+
+    public function updateAvailability(int $id): bool
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `disponible` = 0 WHERE id=:id");
+
+        $statement->bindValue(':id', $id, PDO::PARAM_INT);
+        // $statement->bindValue(':disponible', $medias['disponible'], PDO::PARAM_STR);
+
+        return $statement->execute();
+    }
 }

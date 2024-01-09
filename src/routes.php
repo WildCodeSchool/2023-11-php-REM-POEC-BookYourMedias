@@ -20,6 +20,7 @@ return [
 
     '' => ['MediaController', 'index',],
     'home/edit' => ['MediaController', 'edit', ['id']],
+    'home/editavailability' => ['MediaController', 'editAvailability', ['id']],
     'home/show' => ['MediaController', 'show', ['id']],
     'home/add' => ['MediaController', 'add',],
     'home/delete' => ['MediaController', 'delete',],

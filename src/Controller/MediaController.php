@@ -40,6 +40,24 @@ class MediaController extends AbstractController
         ]);
     }
 
+    public function editAvailability(int $id): ?string
+    {
+        $mediaManager = new MediaManager();
+        $media = $mediaManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reserver'])) {
+            $id = $_POST['id'];
+            $mediaManager->updateAvailability($id);
+            $media['disponible'] = 0;
+        }
+
+        return $this->twig->render('medias/show.html.twig', [
+            'media' => $media,
+        ]);
+    }
+
+
+
     /**
      * Add a new medias
      */

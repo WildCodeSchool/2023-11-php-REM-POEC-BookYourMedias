@@ -1,5 +1,6 @@
 {% extends 'layout.html.twig' %}
 
+
  {% block stylesheet %}
 <link rel="stylesheet" href="../assets/css/page-presentation-media.css">
 
@@ -11,12 +12,12 @@
 <section id="presentation-media">
         <div class="left-side-page">
             <img src="{{ media.image_couverture }}"  alt="image de couverture" class="cover-picture">
-            <p class="size-available">Etat : <i>{% if media.disponible=="yes" %}Disponible{% else %}Indisponible{%endif%}</i></p>
+            <p class="size-available">Etat : <i>{{ media.disponible ? "Disponible" : "Indisponible" }}</i></p>
             <p class="size-categorie">Catégorie : Livres</p>
             {#Faire un formulaire pour la réservation#}
-            <form method="post" action="/home/media/reserver">
+            <form id="reservationForm" method="post">
             <input type="hidden" name="id" value="{{ media.id }}">
-            <button class="style-button">Réserver</button>
+            <button id="reservationButton" class="{{ media.disponible ? 'style-button' : 'unavailable_btn' }}" type="submit" name="reserver">Réserver</button>
             </form>
             {# fin du formulaire#}
         </div>
@@ -32,6 +33,15 @@
             <div class="data-of-media-description box"><p>{{ media.description_media }}</p></div>
         </div>
     </section>
+
+   
+    <script>
+       document.getElementById('reservationForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+            var form = event.target;
+            form.submit(); // Soumettez le formulaire
+        });
+    </script>
 {% endblock %}
 {#
 {{ media.id }}

@@ -5,7 +5,7 @@
     font-style: normal;
 }
 
-.info-labels-for-title, 
+.info-labels-for-title,
 .info-labels-for-author,
 .info-labels-for-date,
 .info-labels-for-description,
@@ -15,7 +15,6 @@
 .data-of-media-description {
     --main-size-data: 1.6em;
 }
-  
 
 #presentation-media {
     display: grid;
@@ -33,7 +32,6 @@
     align-items: center;
 }
 
-
 .right-side-page {
     grid-area: 1 / 3 / 6 / 6;
     background-color: #fff;
@@ -45,16 +43,31 @@
     grid-row-gap: 0px;
 }
 
-.info-labels-for-title { grid-area: 1 / 1 / 2 / 2; }
-.info-labels-for-author { grid-area: 2 / 1 / 3 / 2; }
-.info-labels-for-date { grid-area: 3 / 1 / 4 / 2; }
-.info-labels-for-description { grid-area: 4 / 1 / 5 / 2; }
+.info-labels-for-title {
+    grid-area: 1 / 1 / 2 / 2;
+}
+.info-labels-for-author {
+    grid-area: 2 / 1 / 3 / 2;
+}
+.info-labels-for-date {
+    grid-area: 3 / 1 / 4 / 2;
+}
+.info-labels-for-description {
+    grid-area: 4 / 1 / 5 / 2;
+}
 
-.data-of-media-title { grid-area: 1 / 2 / 2 / 4; }
-.data-of-media-author { grid-area: 2 / 2 / 3 / 4; }
-.data-of-media-date { grid-area: 3 / 2 / 4 / 4; }
-.data-of-media-description { grid-area: 4 / 2 / 5 / 4; }
-
+.data-of-media-title {
+    grid-area: 1 / 2 / 2 / 4;
+}
+.data-of-media-author {
+    grid-area: 2 / 2 / 3 / 4;
+}
+.data-of-media-date {
+    grid-area: 3 / 2 / 4 / 4;
+}
+.data-of-media-description {
+    grid-area: 4 / 2 / 5 / 4;
+}
 
 .info-labels-for-title p,
 .info-labels-for-author p,
@@ -70,9 +83,9 @@
 .info-labels-for-title p,
 .info-labels-for-author p,
 .info-labels-for-date p,
-.info-labels-for-description p{
+.info-labels-for-description p {
     text-decoration: underline;
-    color: #0A477D;
+    color: #0a477d;
 }
 
 .box {
@@ -81,11 +94,11 @@
 
 .cover-picture {
     border-radius: 0.5em;
-    width : clamp(13em, 35vw, 21em);
+    width: clamp(13em, 35vw, 21em);
 }
 
 .style-button {
-    background-color: #0A477D;
+    background-color: #0a477d;
     border-radius: 1rem;
     color: #fff;
     cursor: pointer;
@@ -98,12 +111,23 @@
 }
 .style-button:hover {
     background-color: white;
-    color: #0A477D;
-    border: 2px solid #0A477D;
-
+    color: #0a477d;
+    border: 2px solid #0a477d;
 }
 
-.size-available, .size-categorie {
+.unavailable_btn {
+    background-color: grey;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    height: 2em;
+    font-family: "roboto";
+    border: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.size-available,
+.size-categorie {
     font-size: 1.5em;
 }
 
@@ -116,16 +140,14 @@ footer {
     display: flex;
     justify-content: space-between;
     font-family: "roboto";
-    
 }
-
 
 @media (426px <= width <= 768px) {
     #presentation-media {
         display: flex;
         flex-direction: column;
     }
-    .right-side-page{
+    .right-side-page {
         margin-top: 3em;
         margin-left: 3em;
     }
