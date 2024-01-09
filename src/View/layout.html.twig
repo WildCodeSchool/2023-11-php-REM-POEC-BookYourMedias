@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -15,9 +15,9 @@
 
 <body>
     {% include '_header.html.twig' %}
-
     {% block content %}{% endblock %}
     {% block javascript %}{% endblock %}
+    {% include '_footer.html.twig' %}
 </body>
 </html>
 

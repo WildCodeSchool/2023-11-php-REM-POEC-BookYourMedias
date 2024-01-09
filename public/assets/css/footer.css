@@ -1,0 +1,26 @@
+footer {
+    background-color: #0a477d;
+    height: 4rem;
+    margin-top: 2rem;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+footer > span {
+    color: white;
+    font-family: "roboto";
+}
+
+@media (1px < width < 500px) {
+    .socialMedias {
+        display:block;
+    }
+    *, ::after, ::before {
+        box-sizing: none;
+        background-repeat: no-repeat;
+    }
+}
