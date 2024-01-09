@@ -109,19 +109,6 @@
     font-size: 1.5em;
 }
 
-/* footer {
-    background-color: #0a477d;
-    color: #fff;
-    width: 100%;
-    margin-top: 20em;
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    font-family: "roboto";
-    
-} */
-
-
 @media (426px <= width <= 768px) {
     #presentation-media {
         display: flex;
@@ -131,16 +118,6 @@
         margin-top: 3em;
         margin-left: 3em;
     }
-    /* footer {
-        background-color: #0a477d;
-        color: #fff;
-        width: 100%;
-        margin-top: 28em;
-        height: 6rem;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    } */
     .info-labels-for-description p,
     .data-of-media-description p {
         display: none;
@@ -152,16 +129,6 @@
         display: flex;
         flex-direction: column;
     }
-    /* footer {
-        background-color: #0a477d;
-        color: #fff;
-        width: 100%;
-        margin-top: 35em;
-        height: 6rem;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    } */
     .right-side-page {
         background-color: #fff;
         justify-content: center;

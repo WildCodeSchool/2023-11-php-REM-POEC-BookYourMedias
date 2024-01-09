@@ -58,10 +58,6 @@
  }
  @media (1px <= width <= 425px) {
     .pic-ctn {
-        /* position: relative;
-        width: 77vw;
-        margin-top: 5vh;
-        margin-bottom: 8vh; */
         display: none;
       }
  }
