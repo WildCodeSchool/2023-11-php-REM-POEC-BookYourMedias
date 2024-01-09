@@ -14,12 +14,15 @@
     </nav> #}
 
  <header class="pic-ctn">
-        <img src="assets/images/Couverture1-inscrivez-vous.png" alt="header image" class="pic">
-        <img src="assets/images/Couverture2-nuit-lecture.png" alt="header image" class="pic">
-        <img src="assets/images/Couverture2-table-ronde.png" alt="header image" class="pic">
-
+    {% if user.id != null %}
+    <img src="assets/images/Couverture4-bienvenue.png" alt="header image" class="pic">
+    {% endif %}
+    {% if user.id == null %}
+    <img src="assets/images/Couverture1-inscrivez-vous.png" alt="header image" class="pic">
+    {% endif %}
+    <img src="assets/images/Couverture2-nuit-lecture.png" alt="header image" class="pic">
+    <img src="assets/images/Couverture2-table-ronde.png" alt="header image" class="pic">
 </header>
-
     <div class="container">
         <div class="booksContainer">
                 {# presentation livres #}
