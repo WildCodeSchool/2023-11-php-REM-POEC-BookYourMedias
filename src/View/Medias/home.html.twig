@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 {% endblock %}
 {% block content %}
- <header class="pic-ctn">
+ <header class="pic-ctn bubble">
     {% if user.id != null %}
     <img src="assets/images/Couverture4-bienvenue.png" alt="header image" class="pic">
     {% endif %}
@@ -33,7 +33,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                {# presentation Films #}
+                <hr><br>
                 <h2>Films</h2>
                 <div class="affichageMedias">
                     {% for media in medias %}
@@ -55,6 +55,19 @@
                             <a href="home/show?id={{ media.id }}">
                             <div class="album">
                                 <img src="{{ media.image_couverture }}" alt="{{ media.titre }}" class="bookCover" width="50">
+                                <h1 class="bookTitle">{{ media.titre }}</h1>
+                            </div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <h2>Bandes dessinées</h2>
+                <div class="affichageMedias">
+                    {% for media in medias %}
+                        {% if media['id_categorie'] == 4 %}
+                            <a href="home/show?id={{ media.id }}">
+                            <div class="book">
+                                <img src="{{ media.image_couverture }}" alt="{{ media.titre }}" class="bookCover">
                                 <h1 class="bookTitle">{{ media.titre }}</h1>
                             </div>
                             </a>

@@ -57,7 +57,7 @@ class AdminController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors = [];
             $media = array_map('trim', $_POST);
-            $errors = $this -> validate($media);
+            // $errors = $this -> validate($media);
             if (strlen($media['published_date']) === 0 || strlen($media['published_date']) > 10) {
                 $errors[] = "Date de publication obligatoire";
             }
@@ -90,19 +90,17 @@ class AdminController
         ]);
     }
 
-
-
     private function validate(array $medias)
     {
         $errors = [];
-        if (empty($medias['title'])) {
-            $errors[] = 'The title is required';
+        if (empty($medias['titre'])) {
+            $errors[] = 'Le titre est obligatoire';
         }
         if (empty($medias['description'])) {
-            $errors[] = 'The description is required';
+            $errors[] = 'La description est obligatoire';
         }
-        if (!empty($medias['title']) && strlen($medias['title']) > 255) {
-            $errors[] = 'The title should be less than 255 characters';
+        if (!empty($medias['titre']) && strlen($medias['titre']) > 255) {
+            $errors[] = 'Le titre du film est trop long';
         }
 
         return $errors;

@@ -13,7 +13,7 @@
         <div class="left-side-page">
             <img src="{{ media.image_couverture }}"  alt="image de couverture" class="cover-picture">
             <p class="size-available">Etat : <i>{% if media.disponible== 1 %}Disponible{% else %}Indisponible{% endif %}</i></p>
-            <p class="size-categorie">Catégorie : Livres</p>
+            <p class="size-categorie">Catégorie : {{ media.categorie }}</p>
             {#Faire un formulaire pour la réservation#}
             {% if media.disponible != 0 %}
             <form method="post" action="/home/media/reserver">
@@ -22,6 +22,7 @@
             </form>
             {% endif %}
             {# fin du formulaire#}
+            <a href="{{media.lien_extrait}}" target="_blank" class="extrait">Extrait</a>
         </div>
         <div class="right-side-page">
             <div class="info-labels-for-title box"><p>Titre</p></div>
@@ -30,7 +31,7 @@
             <div class="info-labels-for-description box"><p>Description</p></div>
     
             <div class="data-of-media-title box"><p>{{ media.titre }}</p></div>
-            <div class="data-of-media-author box"><p>{{media.id_auteur}}</p></div>
+            <div class="data-of-media-author box"><p>{{media.name}}</p></div>
             <div class="data-of-media-date box"><p>{{ media.published_date }}</p></div>
             <div class="data-of-media-description box"><p>{{ media.description_media }}</p></div>
         </div>

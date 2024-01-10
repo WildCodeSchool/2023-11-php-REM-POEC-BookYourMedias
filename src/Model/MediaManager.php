@@ -72,4 +72,17 @@ class MediaManager extends AbstractManager
 
         return $statement->execute();
     }
+
+    public function selectOneById(int $id): array|false
+    {
+        // prepared request
+        $query = 'SELECT m.*, a.name, c.name_categorie AS categorie FROM 
+        medias m INNER JOIN auteur a ON m.id_auteur=a.id INNER JOIN categorie c 
+        ON m.id_categorie=c.id WHERE m.id=:id';
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
 }

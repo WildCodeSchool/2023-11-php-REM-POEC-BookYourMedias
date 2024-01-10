@@ -10,14 +10,13 @@
         
     {% elseif user.role == 1 %}
         <div class="link-log-register-space">
-            <a class="nav-link"> {{ user.pseudo }} </a>
+            <a class="nav-link">🟢 {{ user.pseudo }} </a>
             <a class="nav-link" href="/admin">Centre administrateur</a>
             <a class="nav-link" href="/logout">Se déconnecter</a>
         </div>
     {% else %}
         <div class="link-log-register-space">
-            <a class="nav-link"> {{ user.pseudo }} </a>
-            <a class="nav-link" href="/items">Mon historique</a>
+            <a class="nav-link">🟢 {{ user.pseudo }} </a>
             <a class="nav-link" href="/logout">Se déconnecter</a>
         </div>
     {% endif %}

@@ -23,4 +23,7 @@ footer > span {
         box-sizing: none;
         background-repeat: no-repeat;
     }
+    footer {
+        height: 8rem;
+    }
 }
