@@ -20,8 +20,8 @@
     <div class="container">
         <div class="booksContainer">
                 {# presentation livres #}
-                <h2>Livres</h2>
                 <div class="affichageMedias">
+                <h2>Livres</h2>
                     {% for media in medias %}
                         {% if media['id_categorie'] == 1 %}
                             <a href="home/show?id={{ media.id }}">
@@ -34,8 +34,8 @@
                     {% endfor %}
                 </div>
                 {# presentation Films #}
-                <h2>Films</h2>
                 <div class="affichageMedias">
+                <h2>Films</h2>
                     {% for media in medias %}
                         {% if media['id_categorie'] == 2 %}
                             <a href="home/show?id={{ media.id }}">
@@ -48,8 +48,8 @@
                     {% endfor %}
                 </div>
                 {# presentation Albums #}
-                <h2>Albums</h2>
                 <div class="affichageMedias">
+                <h2>Albums</h2>
                     {% for media in medias %}
                         {% if media['id_categorie'] == 3 %}
                             <a href="home/show?id={{ media.id }}">
