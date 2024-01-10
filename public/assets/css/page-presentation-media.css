@@ -138,4 +138,8 @@
     .data-of-media-description p {
         display: none;
     }
+
+    .extrait{
+        margin-bottom: 60px;
+    }
 }

@@ -22,3 +22,28 @@ a:nth-child(5) {
     justify-content: space-between;
     margin-bottom: 5%;
 }
+
+@media (319px <= width <= 425px)  {
+    .navAdmin {
+        display: flex;
+        /* justify-content: flex-start; */
+        flex-direction: column;
+    }
+    a:nth-child(2) {
+        margin-top: 3%;
+        margin-left: 0%;
+    }
+    a:nth-child(3) {
+        margin-top: 3%;
+        margin-left: 0%;
+    }
+    a:nth-child(4) {
+        margin-top: 3%;
+        margin-left: 0%;
+    }
+    a:nth-child(5) {
+        margin-top: 3%;
+        margin-left: 0%;
+        margin-bottom: 5%;
+    }
+}

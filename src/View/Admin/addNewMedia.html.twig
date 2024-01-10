@@ -24,26 +24,6 @@
 
             <form action="" method="post">
                 <div>
-                    <label for="titre">Titre</label>
-                    <input id="titre" name="titre" type="text" value="{{ medias.titre }}">
-                </div>
-                <div>
-                    <label for="published_date">Date de publication</label>
-                    <input id="published_date" name="published_date" type="date" value="{{ medias.published_date }}" >
-                </div>
-                <div>
-                    <label for="description_media">Description</label>
-                    <textarea id="description_media" name="description_media">{{ medias.description_media }}</textarea>
-                </div>
-                <div>
-                    <label for="image_couverture">Lien image de couverture</label>
-                    <textarea id="image_couverture" name="image_couverture">{{ medias.image_couverture }}</textarea>
-                </div>
-                <div>
-                    <label for="lien_extrait">Lien extrait du média</label>
-                    <textarea id="lien_extrait" name="lien_extrait">{{ medias.lien_extrait }}</textarea>
-                </div>
-                <div>
                     <label for="id_auteur">Auteur</label>
                     <select name="id_auteur" id="id_auteur">
                         <option value="">--Veuillez séléctionner un auteur--</option>
@@ -69,6 +49,27 @@
                         <a href="/categorie/add" role="button" class="outline">Ajouter une catégorie</a>
                     </div>
                 </div>
+                <div>
+                    <label for="titre">Titre</label>
+                    <input id="titre" name="titre" type="text" value="{{ medias.titre }}">
+                </div>
+                <div>
+                    <label for="published_date">Date de publication</label>
+                    <input id="published_date" name="published_date" type="date" value="{{ medias.published_date }}" >
+                </div>
+                <div>
+                    <label for="description_media">Description</label>
+                    <textarea id="description_media" name="description_media">{{ medias.description_media }}</textarea>
+                </div>
+                <div>
+                    <label for="image_couverture">Lien image de couverture</label>
+                    <textarea id="image_couverture" name="image_couverture">{{ medias.image_couverture }}</textarea>
+                </div>
+                <div>
+                    <label for="lien_extrait">Lien extrait du média</label>
+                    <textarea id="lien_extrait" name="lien_extrait">{{ medias.lien_extrait }}</textarea>
+                </div>
+                
                 <button>Ajouter</button>
             </form>
         </main>

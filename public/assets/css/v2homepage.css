@@ -4,9 +4,28 @@
     margin: 0 5px 2px 0;
     padding: 0 -1px 3px 0;
     overflow-x: scroll;
-    margin-top: 5%;
+    /* margin-top: 5%; */
 }
 
-.affichageMedias > h2 {
-    margin-right: 5%;
+h2 {
+    display: inline-block;
+    width: 100%;
+    /* margin-right: 5%; */
 }
+
+*::-webkit-scrollbar {
+    width: 12px;
+    
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #9bcffd;
+    border-radius: 20px;
+
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #0A477D;
+    border-radius: 20px;
+    border: 3px solid #48759E;
+  }
