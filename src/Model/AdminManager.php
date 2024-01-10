@@ -47,6 +47,11 @@ class AdminManager extends AbstractManager
 
     public function delete(int $id): void
     {
+        $query = 'DELETE FROM emprunt WHERE medias_id=:id';
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
         $query = 'DELETE FROM medias WHERE id=:id';
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);

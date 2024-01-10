@@ -12,13 +12,15 @@
 <section id="presentation-media">
         <div class="left-side-page">
             <img src="{{ media.image_couverture }}"  alt="image de couverture" class="cover-picture">
-            <p class="size-available">Etat : <i>{% if media.disponible== 1 %}Disponible{% else %}Indisponible{%endif%}</i></p>
+            <p class="size-available">Etat : <i>{% if media.disponible== 1 %}Disponible{% else %}Indisponible{% endif %}</i></p>
             <p class="size-categorie">Catégorie : Livres</p>
             {#Faire un formulaire pour la réservation#}
+            {% if media.disponible != 0 %}
             <form method="post" action="/home/media/reserver">
-            <input type="hidden" name="id" value="{{ media.id }}">
-            <button class="style-button">Réserver</button>
+                <input type="hidden" name="id" value="{{ media.id }}">
+                <button class="style-button">Réserver</button>
             </form>
+            {% endif %}
             {# fin du formulaire#}
         </div>
         <div class="right-side-page">

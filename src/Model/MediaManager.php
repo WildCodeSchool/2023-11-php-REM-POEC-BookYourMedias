@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use DateTime;
 use PDO;
 
 class MediaManager extends AbstractManager
@@ -32,7 +33,7 @@ class MediaManager extends AbstractManager
      */
     public function update(array $medias): bool
     {
-        $statement = $this->pdo->prepare("UPDATE" . self::TABLE . " SET 
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET 
         `titre` = :titre, 
         `published_date` = :published_date, 
         `description_media` = :description_media, 
@@ -48,6 +49,26 @@ class MediaManager extends AbstractManager
         $statement->bindValue(':image_couverture', $medias['image_couverture'], PDO::PARAM_STR);
         $statement->bindValue(':lien_extrait', $medias['lien_extrait'], PDO::PARAM_STR);
         $statement->bindValue(':disponible', $medias['disponible'], PDO::PARAM_STR);
+
+        return $statement->execute();
+    }
+
+    public function book(int $id, int $user)
+    {
+        $statement = $this->pdo->prepare("INSERT INTO emprunt (date_emprunt, medias_id, user_id) 
+        VALUES (:date_emprunt, :medias_id, :user_id)");
+        $statement->bindValue(':medias_id', $id, PDO::PARAM_INT);
+        $statement->bindValue(':user_id', $user, PDO::PARAM_INT);
+        $today = new DateTime('now');
+        $statement->bindValue(':date_emprunt', $today->format('Y-m-d'));
+
+        $statement->execute();
+
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET 
+        `disponible` = :disponible
+        WHERE id=:id");
+        $statement->bindValue(':disponible', 0, PDO::PARAM_BOOL);
+        $statement->bindValue(':id', $id, PDO::PARAM_INT);
 
         return $statement->execute();
     }
