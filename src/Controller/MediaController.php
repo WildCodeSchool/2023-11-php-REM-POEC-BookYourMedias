@@ -72,20 +72,30 @@ class MediaController extends AbstractController
             $mediaManager = new MediaManager();
             $mediaManager->delete((int)$id);
 
-            header('Location:/medias');
+            header('Location: /medias');
         }
     }
 
-    public function book(): string
+    public function book()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            var_dump($_POST);
+            $id = intval(trim($_POST['id']));
+            // filter_var($id, FILTER_VALIDATE_INT);
+            if (empty($_SESSION['user_id'])) {
+                header('Location: /');
+                die();
+            }
+            $user = $_SESSION['user_id'];
+            $mediaManager = new MediaManager();
+            $mediaManager->book($id, $user);
         }
-        //Sécuriser le formulaire
-        //récupérer l'id de l'utilisateur depuis la session
-        //faire une méthode dans le manager pour réserver le livre
-        //Appeler cette méthode
-        //Renvoyer soit une page, soit un header vers l'accueil
+        header('Location: /home/media/confirm-reserve');
+
         return '';
+    }
+
+    public function confirmReservation(): string
+    {
+        return $this->twig->render('Medias/confirmation_reservation.html.twig');
     }
 }
