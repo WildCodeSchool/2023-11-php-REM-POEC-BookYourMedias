@@ -82,7 +82,7 @@ class MediaController extends AbstractController
             $id = intval(trim($_POST['id']));
             // filter_var($id, FILTER_VALIDATE_INT);
             if (empty($_SESSION['user_id'])) {
-                header('Location: /');
+                header('Location: /login');
                 die();
             }
             $user = $_SESSION['user_id'];

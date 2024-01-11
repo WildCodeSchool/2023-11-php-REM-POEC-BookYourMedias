@@ -85,7 +85,7 @@
 
 .cover-picture {
     border-radius: 0.5em;
-    width : clamp(13em, 35vw, 21em);
+    width : clamp(13em, 35vw, 15em);
 }
 
 .style-button {
@@ -107,6 +107,23 @@
 
 .size-available, .size-categorie {
     font-size: 1.5em;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+    
+}
+
+*::-webkit-scrollbar-track {
+  background: #9bcffd;
+  border-radius: 20px;
+
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #0A477D;
+  border-radius: 20px;
+  border: 3px solid #48759E;
 }
 
 @media (426px <= width <= 768px) {
