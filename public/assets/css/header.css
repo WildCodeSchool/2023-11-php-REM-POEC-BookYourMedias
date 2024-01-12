@@ -1,0 +1,19 @@
+.nav-style {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    margin: 0px 50px 0px;
+}
+.nav-link {
+    text-decoration: none;
+}
+.nav-link:hover {
+    text-decoration:underline;
+}
+
+.sizeIconeUser {
+    width: 60px;
+}

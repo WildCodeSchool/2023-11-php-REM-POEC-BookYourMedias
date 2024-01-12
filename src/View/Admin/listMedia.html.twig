@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Liste des médias</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        <link rel="stylesheet" href="../assets/css/navAdmin.css">
+        <link rel="stylesheet" href="../assets/css/cardAdminMenu.css">
+    </head>
+    <body>
+        <main class="container">
+            <div class="navAdmin"> 
+                <a href="/admin">Centre administrateur</a>
+                <a href="/admin/add">Ajouter un média</a>
+                <a href="/auteur/add">Ajouter un auteur</a>
+                <a href="/categorie/add">Ajouter une catégorie</a>
+                <a href="/">Retour à l'accueil</a>
+            </div>
+          <h2>Liste des médias</h2>
+            <ul>
+                {% for media in medias %}
+                <div class="listMedias card">       
+                    <p>{{ media['titre'] }}</p>
+                    <div>
+                        <p>Etat : <i>{% if media.disponible== 1 %}Disponible{% else %}Indisponible{%endif%}</i></p>
+                        <a href="/admin/delete?id={{ media.id }}" role="button" class="outline redButton">Supprimer</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </ul>
+        </main>
+    </body>
+</html>

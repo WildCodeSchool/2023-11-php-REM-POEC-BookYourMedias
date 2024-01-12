@@ -1,0 +1,23 @@
+{% block stylesheet %}
+    <link rel="stylesheet" href="../../assets/css/header.css">
+{% endblock %}
+<nav class="nav-style">
+    <a href="/"><img src="/assets/images/new-logo-book-your-medias-removebg.png" alt="logo du site" width="180px"></a>
+    {% if user.role is same as(null)  %}
+        <div class="link-log-register-space">
+            <a class="nav-link" href="/login"><img src="../assets/images/v2icone-user-svg.png" class="sizeIconeUser" alt="photo d'un utilisateur"></a>
+        </div>
+        
+    {% elseif user.role == 1 %}
+        <div class="link-log-register-space">
+            <a class="nav-link">🟢 {{ user.pseudo }} </a>
+            <a class="nav-link" href="/admin">Centre administrateur</a>
+            <a class="nav-link" href="/logout">Se déconnecter</a>
+        </div>
+    {% else %}
+        <div class="link-log-register-space">
+            <a class="nav-link">🟢 {{ user.pseudo }} </a>
+            <a class="nav-link" href="/logout">Se déconnecter</a>
+        </div>
+    {% endif %}
+</nav>

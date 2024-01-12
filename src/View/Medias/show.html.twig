@@ -1,0 +1,39 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="../assets/css/page-presentation-media.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+{% endblock %}
+
+
+{% block content %}
+
+<section id="presentation-media">
+        <div class="left-side-page">
+            <img src="{{ media.image_couverture }}"  alt="image de couverture" class="cover-picture">
+            <p class="size-available">Etat : <i>{% if media.disponible== 1 %}Disponible{% else %}Indisponible{% endif %}</i></p>
+            <p class="size-categorie">Catégorie : {{ media.categorie }}</p>
+            {#Faire un formulaire pour la réservation#}
+            {% if media.disponible != 0 %}
+            <form method="post" action="/home/media/reserver">
+                <input type="hidden" name="id" value="{{ media.id }}">
+                <button class="style-button">Réserver</button>
+            </form>
+            {% endif %}
+            {# fin du formulaire#}
+            <a href="{{media.lien_extrait}}" target="_blank" class="extrait">Extrait</a>
+        </div>
+        <div class="right-side-page">
+            <div class="info-labels-for-title box"><p>Titre</p></div>
+            <div class="info-labels-for-author box"><p>Auteur</p></div>
+            <div class="info-labels-for-date box"><p>Date de parution</p></div>
+            <div class="info-labels-for-description box"><p>Description</p></div>
+    
+            <div class="data-of-media-title box"><p>{{ media.titre }}</p></div>
+            <div class="data-of-media-author box"><p>{{media.name}}</p></div>
+            <div class="data-of-media-date box"><p>{{ media.published_date }}</p></div>
+            <div class="data-of-media-description box"><p>{{ media.description_media }}</p></div>
+        </div>
+    </section>
+{% endblock %}

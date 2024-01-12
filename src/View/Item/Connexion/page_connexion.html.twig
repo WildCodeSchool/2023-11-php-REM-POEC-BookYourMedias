@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="../assets/css/page-connexion-inscription.css">
+{% endblock %}
+{% block content %}
+    <section id="inscription-connexion-user">
+        <fieldset class="container-form-connexion">
+            <h1>Connexion</h1>
+            <?php foreach ($errors as $error) : ?>
+                <p><?= $error ?></p>
+            <?php endforeach; ?>
+            <form action="" method="post">
+                <div class="space-center-elements">
+                    <input type="email" id="user_email" name="adresse_email" placeholder="Courriel" class="size-input-connexion" required>
+                </div>
+                <div class="space-center-elements">
+                    <input type="password" id="user_password" name="mot_de_passe" placeholder="Mot de passe" class="size-input-connexion" required>
+                </div>
+                <button type="submit" class="style-button">Se connecter</button>
+            </form>
+            <h2><a href="/register" class="subsribe-if-no-account">S'incrire</a></h2>
+        </fieldset>
+    </section>
+{% endblock %}

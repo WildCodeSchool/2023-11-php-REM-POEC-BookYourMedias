@@ -1,0 +1,58 @@
+button {
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
+
+table {
+    display: grid;
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: clamp(11px, 2.5vw, 17px);
+    margin-left: 40px;
+
+    border: none;
+    padding-top: 20px;
+
+
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 8px;
+    
+    padding-right: 40px;
+
+
+}
+
+.corbeil {
+    width: 30px;
+    padding-left: 50px;
+}
+
+.logo {
+    width: 100px;
+}
+
+button {
+    border-radius: 3px 5px;
+    border: none;
+}
+
+@media screen and (max-width:1020px)  {
+    table {
+        margin-left: 0px
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .corbeil {
+        display: flex;
+        padding-top: 10px;
+        padding-right: 40px;
+        justify-content: left;
+    }
+}

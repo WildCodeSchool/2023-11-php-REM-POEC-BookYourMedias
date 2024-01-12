@@ -1,0 +1,79 @@
+
+{% extends 'layout.html.twig' %}
+{% block stylesheet%}
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="/assets/css/v2homepage.css">
+    <link rel="stylesheet" href="/assets/css/caroussel.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+{% endblock %}
+{% block content %}
+ <header class="pic-ctn bubble">
+    {% if user.id != null %}
+    <img src="assets/images/Couverture4-bienvenue.png" alt="header image" class="pic">
+    {% endif %}
+    {% if user.id == null %}
+    <img src="assets/images/Couverture1-inscrivez-vous.png" alt="header image" class="pic">
+    {% endif %}
+    <img src="assets/images/Couverture2-nuit-lecture.png" alt="header image" class="pic">
+    <img src="assets/images/Couverture2-table-ronde.png" alt="header image" class="pic">
+</header>
+    <div class="container">
+        <div class="booksContainer">
+                {# presentation livres #}
+                <h2>Livres</h2>
+                <div class="affichageMedias">
+                    {% for media in medias %}
+                        {% if media['id_categorie'] == 1 %}
+                            <a href="home/show?id={{ media.id }}">
+                            <div class="book">
+                                <img src="{{ media.image_couverture }}" alt="{{ media.titre }}" class="bookCover">
+                                <h1 class="bookTitle">{{ media.titre }}</h1>
+                            </div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <hr><br>
+                <h2>Films</h2>
+                <div class="affichageMedias">
+                    {% for media in medias %}
+                        {% if media['id_categorie'] == 2 %}
+                            <a href="home/show?id={{ media.id }}">
+                            <div class="book">
+                                <img src="{{ media.image_couverture }}" alt="{{ media.titre }}" class="bookCover">
+                                <h1 class="bookTitle">{{ media.titre }}</h1>
+                            </div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {# presentation Albums #}
+                <h2>Albums</h2>
+                <div class="affichageMedias">
+                    {% for media in medias %}
+                        {% if media['id_categorie'] == 3 %}
+                            <a href="home/show?id={{ media.id }}">
+                            <div class="album">
+                                <img src="{{ media.image_couverture }}" alt="{{ media.titre }}" class="bookCover" width="50">
+                                <h1 class="bookTitle">{{ media.titre }}</h1>
+                            </div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <h2>Bandes dessinées</h2>
+                <div class="affichageMedias">
+                    {% for media in medias %}
+                        {% if media['id_categorie'] == 4 %}
+                            <a href="home/show?id={{ media.id }}">
+                            <div class="book">
+                                <img src="{{ media.image_couverture }}" alt="{{ media.titre }}" class="bookCover">
+                                <h1 class="bookTitle">{{ media.titre }}</h1>
+                            </div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+        </div>
+    </div>
+{% endblock %}
